@@ -3,5 +3,20 @@
 \subsection{Model-predictive Control}
 \ac{mpc} arose from optimal control as one answer on how to \qm{close the loop} (\cite{rawlings2017mpc}).\ 
 In optimal control, a system's behaviour is predicted into the future, while optimising the inputs to the system, such that a cost function is minimised.\
-The working principle of \ac{mpc} is repeatedly solving an \ac{ocp}, only applying the first of the calculated inputs, and measuring the system's state.\ 
+The working principle of \ac{mpc} is repeatedly measuring the system's state, solving an \ac{ocp}, and applying the first few of the calculated inputs.\ 
+\todo{move to background or introduction}
 
+\subsection{Wave generation}
+
+\subsection{Adaptive weight selection}
+When applying \ac{mpc}, we do not know exactly how the system will perform over the deployment of the control.\ 
+In the case of the WEC-DEG when driving the system with a set weighting, different sea states will result in a different damage accumulation over time.\ 
+Since the \ac{deg} has to be replaced once it breaks down, an operator of multiple \acp{deg} might be interested replacing all of the devices at once to save monetary costs.\ 
+This means, that the breakdown of all the devices has to be synced, e.g. by changing the weighting of the damage cost function in a way, such that the accumulated damage cost at the designated break-down time does not exceed a fixed value $\Jd_2$.\ 
+
+One easy way of deciding, if this damage goal is achievable with the current weighting is by evaluating the \ac{mpc} performance over a short time into the past, estimating the average rate of damage accumulation, and predicting the damage at the break-down time.\ 
+\todo{can be shortened to just reflect the change of weighting}
+\begin{algorithm}[htb]
+\KwIn{$\Jd_i$, \td, $N$, \tf, $k \geq 2$, }
+solve Problem~\ref{prob:ocp};
+\end{algorithm}
