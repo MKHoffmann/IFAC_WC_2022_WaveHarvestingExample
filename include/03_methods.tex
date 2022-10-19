@@ -1,22 +1,73 @@
 \section{Methods}
 
-\subsection{Model-predictive Control}
-\ac{mpc} arose from optimal control as one answer on how to \qm{close the loop} (\cite{rawlings2017mpc}).\ 
-In optimal control, a system's behaviour is predicted into the future, while optimising the inputs to the system, such that a cost function is minimised.\
-The working principle of \ac{mpc} is repeatedly measuring the system's state, solving an \ac{ocp}, and applying the first few of the calculated inputs.\ 
-\todo{move to background or introduction}
+\subsection{Discretisation and simplification of the \ac{ocp}}
+In order to solve the Problem~\ref{prob:ocp}, we employ direct methods for optimal control to first formulate the \ac{ocp} as a non-linear program (see \cite{Gerdts2011OC}).\ 
+Using gradient-based methods, the discretised optimal control sequence is calculated.\ 
+The integral terms inside the cost functions have to be approximated.\ 
+We do so by adding the integrand to the dynamics
+\begin{align*}
+	\dot{\Upsilon}_1 &= B_h\dot{\theta}^2 +z^\intercal S_r z +\dfrac{u}{R_0} - d \dot{\theta} \nonumber\\
+	\dot{\Upsilon}_2 &= \left(\max \{ \cos^2(\theta)u-E_{th}^2 h_l^2,0 \} \right)^{n_d},
+\end{align*}\ 
+with
+\begin{align*}
+	\Upsilon_1(0) = \Upsilon_2(0) = 0.
+\end{align*}
+The extended state reads
+$\xvek = \begin{bmatrix}
+	{\theta} &
+	{\vartheta} & 
+	{z{^\intercal}} &
+	{\Upsilon_1} &
+	{\Upsilon_2}
+\end{bmatrix}^\intercal$, with the initial value $\xvek_0 = \begin{bmatrix}
+{\theta_0} &
+{\vartheta_0} & 
+{z_0{^\intercal}} &
+{0} &
+{0}
+\end{bmatrix}^\intercal$
+
+In the following, the discretised values corresponding to their continuous counterparts are marked by square brackets, e.g. the state vector $\xvek[k]$, the extended state $k$ time steps into the future.\ 
+The current state of the system is advanced by one step into the future using the classical Runge-Kutta-Method of 4-th order (RK4), denoted by $F_{RK4}(\xvek[k], u[k], u[k+1], d[k], d[k+1])$.\ 
+Consecutive values for the input and wave excitation are used to model first-order hold behaviour.\ 
+The dynamics can then be expressed with the equality constraints
+\begin{align*}
+	\xvek[k+1] = F_{RK4}(\xvek[k], u[k], u[k+1], d[k], d[k+1]) \\
+	\forall k\in\left[0,N-2]\right]\\
+	\xvek[0] = \xvek_0,
+\end{align*}
+where $N$ is the number of time steps $t_f$ is separated into.\ 
+
+
 
 \subsection{Wave generation}
 
 \subsection{Adaptive weight selection}
 When applying \ac{mpc}, we do not know exactly how the system will perform over the deployment of the control.\ 
 In the case of the WEC-DEG when driving the system with a set weighting, different sea states will result in a different damage accumulation over time.\ 
-Since the \ac{deg} has to be replaced once it breaks down, an operator of multiple \acp{deg} might be interested replacing all of the devices at once to save monetary costs.\ 
-This means, that the breakdown of all the devices has to be synced, e.g. by changing the weighting of the damage cost function in a way, such that the accumulated damage cost at the designated break-down time does not exceed a fixed value $\Jd_2$.\ 
+Since the \ac{deg} has to be replaced once it breaks down, an operator of multiple \acp{deg} might be interested replacing all of the devices at the same time to save monetary costs.\ 
+This means, that the breakdown of all the devices has to be synced, e.g. by changing the weighting of the damage cost function in a way, such that the accumulated damage cost at the designated break-down time \tbd does not exceed a fixed value $\Jd$.\ 
 
-One easy way of deciding, if this damage goal is achievable with the current weighting is by evaluating the \ac{mpc} performance over a short time into the past, estimating the average rate of damage accumulation, and predicting the damage at the break-down time.\ 
-\todo{can be shortened to just reflect the change of weighting}
-\begin{algorithm}[htb]
-\KwIn{$\Jd_i$, \td, $N$, \tf, $k \geq 2$, }
-solve Problem~\ref{prob:ocp};
-\end{algorithm}
+Assume a fixed set $w$ of \nw weight combinations sorted from low to high priority for the handled cost function (in our case $J_2$) and an initial weight index $\iw \in [1, \nw]$.\ 
+One easy way of deciding, if the damage goal is achievable with the current weighting is by evaluating the \ac{mpc} performance over $N_p$ time steps into the past.\ 
+The average rate of damage accumulation \Jps is estimated and the damage at the break-down time is predicted as an average trend.\ 
+This is done every $N_p$ steps.\ 
+Algorithm~\ref{alg:w_select} shows the selection, where $k$ is the current time step.
+
+\todo{is probably not necessary with the repo}
+\begin{algorithm2e}\label{alg:w_select}
+	\caption{Weight selection for $i$-th cost function}
+	\KwIn{$\Jd, \tbd, \iw, \nw, J^\mathrm{r}_i, \mud, N_p, \Delta t, k$}
+	\KwOut{\iw}
+	\If{$k+1 \; \mathrm{mod} \; N_p = 0$ }{
+		$\Jps \gets \frac{1}{N_p\Delta t} \sum_{l=0}^{N_p-1} J_i^\mathrm{r}[k-l]$\;
+		\uIf{$\sum_{l=0}^{j} + \Jps(\tbd - k\Delta t) > \Jd$ and $\iw < \nw$}{
+			$\iw = \iw+1$
+		}\ElseIf{$\sum_{l=0}^{j} + \Jps(\tbd - k\Delta t) > \Jd$ and $\iw > 1$}{
+			$\iw = \iw-1$
+		}
+	}
+\end{algorithm2e}
+
+For an exemplary implementation in MATLAB using our system, refer to \todo{link}.
