@@ -1,18 +1,19 @@
 \section{Methods}
 
 \subsection{Discretisation and simplification of the \ac{ocp}}
-In order to solve the Problem~\ref{prob:ocp}, we employ direct methods for optimal control to first formulate the \ac{ocp} as a non-linear program (see \cite{Gerdts2011OC}).\ 
+In order to solve the Problem~\ref{prob:ocp}, we employ direct methods for optimal control to first formulate the \ac{ocp} as a \ac{nlp} (see \cite{Gerdts2011OC}).\ 
 Using gradient-based methods, the discretised optimal control sequence is calculated.\ 
 The integral terms inside the cost functions have to be approximated.\ 
 We do so by adding the integrand to the dynamics
 \begin{align*}
-	\dot{\Upsilon}_1 &= B_h\dot{\theta}^2 +z^\intercal S_r z +\dfrac{u}{R_0} - d \dot{\theta} \nonumber\\
-	\dot{\Upsilon}_2 &= \left(\max \{ \cos^2(\theta)u-E_{th}^2 h_l^2,0 \} \right)^{n_d},
+	\dot{\Upsilon}_1 &= B_h\delta^2 +z^\intercal S_r z +\dfrac{u}{R_0} - d \delta \nonumber\\
+	\dot{\Upsilon}_2 &= \left(\max \{ u-E_{th}^2 h_l^2,0 \} \right)^{n_d},
 \end{align*}\ 
 with
 \begin{align*}
 	\Upsilon_1(0) = \Upsilon_2(0) = 0.
 \end{align*}
+Remark, that the term $\cos^2(\theta)$ is simplified to 1, the same is done in the constraint on $u$.
 The extended state reads
 $\xvek = \begin{bmatrix}
 	{\theta} &
@@ -38,9 +39,18 @@ The dynamics can then be expressed with the equality constraints
 	\xvek[0] = \xvek_0,
 \end{align*}
 where $N$ is the number of time steps $t_f$ is separated into.\ 
-
-
-
+The cost functions are then $J_1 \approx \Upsilon_1[N-1]$ and $J_2 \approx \Psi[N-1] - \Psi[0] + \Upsilon_2[N-1]$, so that the \ac{moocp} is
+\begin{problem}\label{pb:problem_disc}
+%	The constrained discrete-time minimisation problem with scalarised multi-objective cost is given by 
+	\begin{align}\label{eq:problem2}
+		\minimize_{u[1],\ldots,u[N]} \ &w_1 J_1 + w_2 J_2 \nonumber\\
+		\ \st \ & \xvek[k+1] = F_{RK4}(\xvek[k], u[k], u[k+1],\dots\nonumber\\ &d[k]), d[k+1])  \forall \ k \in [0, N-2], \nonumber\\
+		&0 \le  u[k] \le (E_{bd} h_l)^2, \ \forall \ k \in [0, N-1]\\
+		& \xvek[0] = \xvek_0\\
+		& u[0] = u_0,
+	\end{align}
+\end{problem}
+where $u_0$ is a fixed initial value of 0 and especially for $k>0$ $u_0$ is the previous step's $u[1]$ \todo{hier mpc notation sinnvoll...}
 \subsection{Wave generation}
 
 \subsection{Adaptive weight selection}
