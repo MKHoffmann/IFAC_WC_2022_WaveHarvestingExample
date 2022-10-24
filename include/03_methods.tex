@@ -31,7 +31,7 @@ $\xvek = \begin{bmatrix}
 
 In the following, the discretised values corresponding to their continuous counterparts are marked by square brackets, e.g. the state vector $\xvek[k]$, the extended state $k$ time steps into the future.\ 
 The current state of the system is advanced by one step into the future using the classical Runge-Kutta-Method of 4-th order (RK4), denoted by $F_{RK4}(\xvek[k], u[k], u[k+1], d[k], d[k+1])$.\ 
-Consecutive values for the input and wave excitation are used to model first-order hold behaviour.\ 
+Consecutive values for the input and wave excitation are used to model \ac{foh} behaviour.\ 
 The dynamics can then be expressed with the equality constraints
 \begin{align*}
 	\xvek[k+1] = F_{RK4}(\xvek[k], u[k], u[k+1], d[k], d[k+1]) \\
@@ -39,7 +39,7 @@ The dynamics can then be expressed with the equality constraints
 	\xvek[0] = \xvek_0,
 \end{align*}
 where $N$ is the number of time steps $t_f$ is separated into.\ 
-The cost functions are then $J_1 \approx \Upsilon_1[N-1]$ and $J_2 \approx \Psi[N-1] - \Psi[0] + \Upsilon_2[N-1]$, so that the \ac{moocp} is
+The cost functions are then $J_1 \approx \Upsilon_1[N-1]$ and $J_2 \approx \Upsilon_2[N-1]$, so that the \ac{moocp} is
 \begin{problem}\label{pb:problem_disc}
 %	The constrained discrete-time minimisation problem with scalarised multi-objective cost is given by 
 	\begin{align}\label{eq:problem2}
@@ -50,34 +50,42 @@ The cost functions are then $J_1 \approx \Upsilon_1[N-1]$ and $J_2 \approx \Psi[
 		& u[0] = u_0,
 	\end{align}
 \end{problem}
-where $u_0$ is a fixed initial value of 0 and especially for $k>0$ $u_0$ is the previous step's $u[1]$ \todo{hier mpc notation sinnvoll...}
+where $u_0$ is a fixed initial value of 0 for the very first and $u_\mathrm{MPC}[k-1]$ for the $k$-th MPC-step. \todo{understandable?}\
+The values for $\Psi$ are dropped.\ 
+Since $\Psi(0)$ is a constant for the \ac{foh} formulation, it does not change the optimization problem.\ 
+Regarding $\Psi(\tf)$, $I_\mathrm{h}, K_\mathrm{h}$ are multiple magnitudes larger than $C_0$, so their terms dominate the expression of $\Psi$.\ 
+The quadratic cost terms push the solution to the equilibrium position $\theta = 0$ at the end of the prediction horizon, an effect unwanted in continuous operation.
+
 \subsection{Wave generation}
+
 
 \subsection{Adaptive weight selection}
 When applying \ac{mpc}, we do not know exactly how the system will perform over the deployment of the control.\ 
-In the case of the WEC-DEG when driving the system with a set weighting, different sea states will result in a different damage accumulation over time.\ 
+In the case of the WEC-DEG when driving the system with a fixed weighting, different sea states will result in a different damage accumulation over time.\ 
 Since the \ac{deg} has to be replaced once it breaks down, an operator of multiple \acp{deg} might be interested replacing all of the devices at the same time to save monetary costs.\ 
 This means, that the breakdown of all the devices has to be synced, e.g. by changing the weighting of the damage cost function in a way, such that the accumulated damage cost at the designated break-down time \tbd does not exceed a fixed value $\Jd$.\ 
 
 Assume a fixed set $w$ of \nw weight combinations sorted from low to high priority for the handled cost function (in our case $J_2$) and an initial weight index $\iw \in [1, \nw]$.\ 
 One easy way of deciding, if the damage goal is achievable with the current weighting is by evaluating the \ac{mpc} performance over $N_p$ time steps into the past.\ 
-The average rate of damage accumulation \Jps is estimated and the damage at the break-down time is predicted as an average trend.\ 
-This is done every $N_p$ steps.\ 
-Algorithm~\ref{alg:w_select} shows the selection, where $k$ is the current time step.
+The average rate of damage accumulation \Jps is estimated and the damage at the break-down time is predicted as an average trend.\
+If the predicted damage exceeds \Jd, \iw is decreased by 1.\ 
+Otherwise, if the predicted damage falls below $c_\mathrm{d}\Jd$ with $c_\mathrm{d}\in\left[0, 1\right]$, \iw is increased by 1.
+This is done every $N_p$ steps.\
+%Algorithm~\ref{alg:w_select} shows the selection, where $k$ is the current time step.
+%
+%\todo{is probably not necessary with the repo}
+%\begin{algorithm2e}\label{alg:w_select}
+%	\caption{Weight selection for $i$-th cost function}
+%	\KwIn{$\Jd, \tbd, \iw, \nw, J^\mathrm{r}_i, \mud, N_p, \Delta t, k$}
+%	\KwOut{\iw}
+%	\If{$k+1 \; \mathrm{mod} \; N_p = 0$}{
+%		$\Jps \gets \frac{1}{N_p\Delta t} \sum_{l=0}^{N_p-1} J_i^\mathrm{r}[k-l]$\;
+%		\uIf{$\sum_{l=0}^{j} + \Jps(\tbd - k\Delta t) > \Jd$ and $\iw < \nw$}{
+%			$\iw = \iw+1$
+%		}\ElseIf{$\sum_{l=0}^{j} + \Jps(\tbd - k\Delta t) > \Jd$ and $\iw > 1$}{
+%			$\iw = \iw-1$
+%		}
+%	}
+%\end{algorithm2e}
 
-\todo{is probably not necessary with the repo}
-\begin{algorithm2e}\label{alg:w_select}
-	\caption{Weight selection for $i$-th cost function}
-	\KwIn{$\Jd, \tbd, \iw, \nw, J^\mathrm{r}_i, \mud, N_p, \Delta t, k$}
-	\KwOut{\iw}
-	\If{$k+1 \; \mathrm{mod} \; N_p = 0$ }{
-		$\Jps \gets \frac{1}{N_p\Delta t} \sum_{l=0}^{N_p-1} J_i^\mathrm{r}[k-l]$\;
-		\uIf{$\sum_{l=0}^{j} + \Jps(\tbd - k\Delta t) > \Jd$ and $\iw < \nw$}{
-			$\iw = \iw+1$
-		}\ElseIf{$\sum_{l=0}^{j} + \Jps(\tbd - k\Delta t) > \Jd$ and $\iw > 1$}{
-			$\iw = \iw-1$
-		}
-	}
-\end{algorithm2e}
-
-For an exemplary implementation in MATLAB using our system, refer to \todo{link}.
+For an exemplary implementation in MATLAB using the mentioned system, refer to \todo{link}.

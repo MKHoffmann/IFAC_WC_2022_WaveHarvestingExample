@@ -1,12 +1,23 @@
 \section{Numerical Results}
 
 The following simulations were done using MATLAB.\ 
-The optimisation problems were formulated and solved using the CasADi package by \cite{Andersson2019casadi} and the Ipopt solver by \cite{Waechter2006ipopt}.\ 
-
-
+The optimisation problems were formulated and solved using the CasADi package by \cite{Andersson2019casadi} and the Ipopt solver by \cite{Waechter2006ipopt}.\
+Perfect prediction is assumed.\ 
 %\subsection{Fractional Brownian Motion Noise}
 
-\subsection{Multi-objective Optimal Control}
-Methods from \cite{Hoffmann2022moocp_wcdeg}.
+\subsection{Accuracy of Model-predictive Control}
 
-\subsection{Model-predictive Control}
+\subsection{Weight selection algorithm}
+In this section, we evaluate the performance of the weight selection algorithm by simulating the system's behaviour for different sea states.\ 
+The $\nw=15$ fixed weights were found using the AWDS algorithm by \cite{Ryu2019} for the initial optimization.\ 
+We compare for three different wave scenarios the performance of the \ac{mpc} with weight controller for two target damage values $\Jd = \left\{0.35, 0.5\right\}$.\ 
+The performance of a weighting is evaluated every \SI{25}{\second}.\ 
+An increase of the damage weighting is allowed after each evaluation, a decrease only every two evaluations.
+\begin{figure}[htb]
+\label{fig:weight_control}
+\centering
+\fontsize{11}{0}\selectfont
+\def\svgwidth{0.2\textwidth}
+\input{images/example_pdf.pdf_tex}
+\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\\Left: Accumulated damage over time.\\ Right: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost.}
+\end{figure}
