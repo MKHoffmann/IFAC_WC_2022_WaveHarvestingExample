@@ -70,7 +70,9 @@ One easy way of deciding, if the damage goal is achievable with the current weig
 The average rate of damage accumulation \Jps is estimated and the damage at the break-down time is predicted as an average trend.\
 If the predicted damage exceeds \Jd, \iw is decreased by 1.\ 
 Otherwise, if the predicted damage falls below $c_\mathrm{d}\Jd$ with $c_\mathrm{d}\in\left[0, 1\right]$, \iw is increased by 1.
-This is done every $N_p$ steps.\
+This is done every $N_p$ steps if the \ac{deg} was actuated during that time.\
+Of course, this algorithm just evaluates the performance in hindsight, not using the full potential of MPC.\ 
+Still, we show that even this very simple heuristic can perform quite well, motivating more elaborate adaptation algorithms.
 %Algorithm~\ref{alg:w_select} shows the selection, where $k$ is the current time step.
 %
 %\todo{is probably not necessary with the repo}

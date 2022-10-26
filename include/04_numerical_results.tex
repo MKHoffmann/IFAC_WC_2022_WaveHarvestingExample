@@ -1,23 +1,54 @@
 \section{Numerical Results}
 
 The following simulations were done using MATLAB.\ 
-The optimisation problems were formulated and solved using the CasADi package by \cite{Andersson2019casadi} and the Ipopt solver by \cite{Waechter2006ipopt}.\
-Perfect prediction is assumed.\ 
+The optimisation problems were formulated and solved using the CasADi package by \cite{Andersson2019casadi} and the IPOPT solver by \cite{Waechter2006ipopt}.\
+The panchromatic waves were generated using 50 frequencies with a base frequency of \SI{0.1}{\hertz}, while perfect prediction is assumed.\ 
 %\subsection{Fractional Brownian Motion Noise}
 
-\subsection{Accuracy of Model-predictive Control}
+\subsection{Accuracy of model-predictive control}
+When employing \ac{mpc}, we cannot expect to get the same results as an \ac{ocp} with longer prediction horizon would give.\ 
+By shifting the prediction horizon each time step, new information is provided, potentially leading to largely different input sequences compared to previous solutions.\
+\figref{fig:mpc_error} shows the mean absolute error (MAE) between the ground truth \ac{ocp} solution over a prediction horizon of \SI{320}{\second} and $u_\mathrm{MPC}$.\ 
+$u_\mathrm{MPC}$ was calculated using different horizon lengths from 10 to \SI{77}{\second}.\
+As expected, the error decreases for longer prediction horizons.\ 
+Moreover, it shows that for prediction horizons of length close to the period of the base wave, the error stagnates, indicating that prediction horizons longer than that are recommended.\ 
+In the following, we will use a \SI{60}{\second} horizon for a good performance while not increasing the \ac{ocp}'s complexity too much.
+\begin{figure}[htb]
+	\centering
+	\fontsize{10}{0}\selectfont
+	\def\svgwidth{0.47\textwidth}
+	\input{images/MPC_absolute_error.pdf_tex}
+	\caption{Mean absolute deviation of $u_\mathrm{MPC}$ over \SI{320}{\second} from ground truth for different prediction horizon lengths.\ Ground truth is an OCP over the full horizon.}
+	\label{fig:mpc_error}
+\end{figure}
 
 \subsection{Weight selection algorithm}
-In this section, we evaluate the performance of the weight selection algorithm by simulating the system's behaviour for different sea states.\ 
-The $\nw=15$ fixed weights were found using the AWDS algorithm by \cite{Ryu2019} for the initial optimization.\ 
-We compare for three different wave scenarios the performance of the \ac{mpc} with weight controller for two target damage values $\Jd = \left\{0.35, 0.5\right\}$.\ 
+In this section, we evaluate the performance of the simple heuristic weight selection algorithm by simulating the system's behaviour for different sea states.\ 
+The $\nw=15$ predetermined weights are evenly distributed between 0.05 and 0.95 with $w_1+w_2=1$.\ 
+As shown in \figref{fig:PF}, this does not result in an even distribution of Pareto points along the Pareto front, but as we will show, even this very simple approach yields nice results.\
+\begin{figure}[htb]
+	\centering
+	\fontsize{8}{0}\selectfont
+	\def\svgwidth{0.4\textwidth}
+	\input{images/ParetoFront.pdf_tex}
+	\caption{For an even distribution of weights, the Pareto points are typically not evenly distributed along the Pareto front.}
+	\label{fig:PF}
+\end{figure}
+
+Alternatively, the weights could be found using the adaptive weight determination scheme by \cite{Ryu2019}.\
+\\ 
+We compare for three different wave scenarios the performance of the \ac{mpc} with weight controller for two target damage values $\Jd = \left\{0.3, 0.5\right\}$.\ 
 The performance of a weighting is evaluated every \SI{25}{\second}.\ 
 An increase of the damage weighting is allowed after each evaluation, a decrease only every two evaluations.
-\begin{figure}[htb]
-\label{fig:weight_control}
+\begin{figure*}[htb]
 \centering
-\fontsize{11}{0}\selectfont
-\def\svgwidth{0.2\textwidth}
-\input{images/example_pdf.pdf_tex}
-\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\\Left: Accumulated damage over time.\\ Right: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost.}
-\end{figure}
+\fontsize{8}{0}\selectfont
+\def\svgwidth{0.97\textwidth}
+\input{images/dmg_controller.pdf_tex}
+\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\ Every 100th \\ Top: Accumulated damage over time. Bottom: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost.}
+\label{fig:weight_control}
+\end{figure*}
+
+\figref{fig:weight_control} shows the performance of this heuristic weight control for the three different wave excitations by displaying the accumulated damage in the top and the selected index in the bottom plots.\ 
+In the left example, the waves are all very similar and since the initial weighting would not exploit all the damage, the damage weight is steadily decreased until, for the 0.5 threshold, the index stays around 12.\
+
