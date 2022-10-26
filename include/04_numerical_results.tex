@@ -15,7 +15,7 @@ Moreover, it shows that for prediction horizons of length close to the period of
 In the following, we will use a \SI{60}{\second} horizon for a good performance while not increasing the \ac{ocp}'s complexity too much.
 \begin{figure}[htb]
 	\centering
-	\fontsize{10}{0}\selectfont
+	\fontsize{8}{0}\selectfont
 	\def\svgwidth{0.47\textwidth}
 	\input{images/MPC_absolute_error.pdf_tex}
 	\caption{Mean absolute deviation of $u_\mathrm{MPC}$ over \SI{320}{\second} from ground truth for different prediction horizon lengths.\ Ground truth is an OCP over the full horizon.}
@@ -25,13 +25,13 @@ In the following, we will use a \SI{60}{\second} horizon for a good performance 
 \subsection{Weight selection algorithm}
 In this section, we evaluate the performance of the simple heuristic weight selection algorithm by simulating the system's behaviour for different sea states.\ 
 The $\nw=15$ predetermined weights are evenly distributed between 0.05 and 0.95 with $w_1+w_2=1$.\ 
-As shown in \figref{fig:PF}, this does not result in an even distribution of Pareto points along the Pareto front, but as we will show, even this very simple approach yields nice results.\
+As shown in \figref{fig:PF}, this does not result in an even distribution of Pareto points along the Pareto front, but, as we will show, even this very simple approach yields acceptable results.\
 \begin{figure}[htb]
 	\centering
 	\fontsize{8}{0}\selectfont
 	\def\svgwidth{0.4\textwidth}
-	\input{images/ParetoFront.pdf_tex}
-	\caption{For an even distribution of weights, the Pareto points are typically not evenly distributed along the Pareto front.}
+	\input{images/twoParetoFronts.pdf_tex}
+	\caption{For an even distribution of weights, the Pareto points are typically not evenly distributed along the Pareto front, especially as the shape changes due to different sea states.}
 	\label{fig:PF}
 \end{figure}
 
@@ -45,10 +45,14 @@ An increase of the damage weighting is allowed after each evaluation, a decrease
 \fontsize{8}{0}\selectfont
 \def\svgwidth{0.97\textwidth}
 \input{images/dmg_controller.pdf_tex}
-\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\ Every 100th \\ Top: Accumulated damage over time. Bottom: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost.}
+\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\ For clarity, only every 100th value is displayed. Top: Accumulated damage over time. Bottom: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost.}
 \label{fig:weight_control}
 \end{figure*}
 
 \figref{fig:weight_control} shows the performance of this heuristic weight control for the three different wave excitations by displaying the accumulated damage in the top and the selected index in the bottom plots.\ 
 In the left example, the waves are all very similar and since the initial weighting would not exploit all the damage, the damage weight is steadily decreased until, for the 0.5 threshold, the index stays around 12.\
+The second example shows a smooth increase into decrease of the index, so that the accumulated damage approaches the target damage without overshooting.\ 
+When sea states which allow for a low damage weight are present, the controller might select weights which are too high for upcoming scenarios.\ 
+This is what leads to the overshoots in the final example.\ 
+Even though the controller does not react fast enough, it only violates the threshold by less than 3 \% before selecting the weighting that accumulates the least damage.
 

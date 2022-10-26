@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{2253.05383301bp}%
+    \setlength{\unitlength}{898.74664307bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,105 +50,103 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.3515168)%
+  \begin{picture}(1,0.35247723)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{dmg_controller.pdf}}%
-    \put(0.04198696,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.08054573,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.12193402,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.16631821,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.21070241,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.2550866,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.29947082,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.04210258,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.08076751,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.12235326,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.16685966,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.21136605,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.25587253,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.30037893,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{dmg_controller.pdf}}%
-    \put(0.02856075,0.21197649){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.01957295,0.23636762){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
-    \put(0.01957295,0.26075878){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
-    \put(0.01957295,0.28514991){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
-    \put(0.01957295,0.30954104){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
-    \put(0.01957295,0.33393216){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
-    \put(0.00880976,0.24992505){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}acc. damage\end{tabular}}}}}%
+    \put(0.02830562,0.21256017){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.01996066,0.23713982){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
+    \put(0.01996066,0.26171955){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
+    \put(0.01996066,0.28629919){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
+    \put(0.01996066,0.31087892){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
+    \put(0.01996066,0.33545857){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.008834,0.25094705){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}acc. damage\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{dmg_controller.pdf}}%
-    \put(0.07371613,0.32900705){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}threshold 0.3\end{tabular}}}}%
+    \put(0.07214442,0.3309447){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}threshold 0.3\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{dmg_controller.pdf}}%
-    \put(0.07371613,0.31464774){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}threshold 0.5\end{tabular}}}}%
+    \put(0.07214442,0.31615143){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}threshold 0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{dmg_controller.pdf}}%
-    \put(0.04198696,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.08054573,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.12193402,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.16631821,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.21070241,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.2550866,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.29947082,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
-    \put(0.15450105,0.00015286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
+    \put(0.04210258,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.08076751,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.12235326,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.16685966,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.21136605,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.25587253,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.30037893,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.15517689,0.00015329){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{dmg_controller.pdf}}%
-    \put(0.02856075,0.02522995){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6\end{tabular}}}}%
-    \put(0.02856075,0.05885099){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8\end{tabular}}}}%
-    \put(0.02256888,0.09247202){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
-    \put(0.02256888,0.12609306){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12\end{tabular}}}}%
-    \put(0.02256888,0.15971409){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14\end{tabular}}}}%
-    \put(0.01180569,0.05851817){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Selected index\end{tabular}}}}}%
+    \put(0.02830562,0.02563319){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6\end{tabular}}}}%
+    \put(0.02830562,0.05922163){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8\end{tabular}}}}%
+    \put(0.02246415,0.09281007){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.02246415,0.12639851){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12\end{tabular}}}}%
+    \put(0.02246415,0.15998696){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14\end{tabular}}}}%
+    \put(0.01133749,0.05859584){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Selected index\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{dmg_controller.pdf}}%
-    \put(0.37886307,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.41747733,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.45892108,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.50336076,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.54780044,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.59224013,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.63667981,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.37339728,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.41206221,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.45364796,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.49815436,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.54266075,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.58716723,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.63167363,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=8]{dmg_controller.pdf}}%
-    \put(0.36543682,0.21197649){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.35644902,0.23636762){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
-    \put(0.35644902,0.26075878){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
-    \put(0.35644902,0.28514991){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
-    \put(0.35644902,0.30954104){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
-    \put(0.35644902,0.33393216){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.36126931,0.21256017){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.35292436,0.23713982){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
+    \put(0.35292436,0.26171955){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
+    \put(0.35292436,0.28629919){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
+    \put(0.35292436,0.31087892){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
+    \put(0.35292436,0.33545857){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=9]{dmg_controller.pdf}}%
-    \put(0.37886307,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.41747733,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.45892108,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.50336076,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.54780044,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.59224013,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.63667981,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
-    \put(0.4915436,0.00015286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
+    \put(0.37339728,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.41206221,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.45364796,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.49815436,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.54266075,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.58716723,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.63167363,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.48647159,0.00015329){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=10]{dmg_controller.pdf}}%
-    \put(0.36543682,0.02522995){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.36543682,0.07005801){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
-    \put(0.35944496,0.11488603){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
-    \put(0.35944496,0.15971409){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15\end{tabular}}}}%
+    \put(0.36126931,0.02563319){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.36126931,0.0704178){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0.35542784,0.11520234){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.35542784,0.15998696){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=11]{dmg_controller.pdf}}%
-    \put(0.71607205,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.75468631,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.79613006,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.84056975,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.88500943,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.92944911,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.9738888,0.20171265){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.71470593,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.75350997,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.79523474,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.83988025,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.88452576,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.92917126,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.97381677,0.20210119){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=12]{dmg_controller.pdf}}%
-    \put(0.70264584,0.21197649){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.69365804,0.23636762){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
-    \put(0.69365804,0.26075878){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
-    \put(0.69365804,0.28514991){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
-    \put(0.69365804,0.30954104){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
-    \put(0.69365804,0.33393216){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.70257796,0.21256017){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.694233,0.23713982){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
+    \put(0.694233,0.26171955){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
+    \put(0.694233,0.28629919){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
+    \put(0.694233,0.31087892){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
+    \put(0.694233,0.33545857){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=13]{dmg_controller.pdf}}%
-    \put(0.71607205,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.75468631,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.79613006,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.84056975,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.88500943,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.92944911,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.9738888,0.01496608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
-    \put(0.82875262,0.00015286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
+    \put(0.71470593,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.75350997,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.79523474,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.83988025,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.88452576,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.92917126,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.97381677,0.0151742){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.8281974,0.00015329){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=14]{dmg_controller.pdf}}%
-    \put(0.70264584,0.03745579){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
-    \put(0.70264584,0.06190744){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6\end{tabular}}}}%
-    \put(0.70264584,0.08635912){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8\end{tabular}}}}%
-    \put(0.69665398,0.11081076){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
-    \put(0.69665398,0.13526244){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12\end{tabular}}}}%
-    \put(0.69665398,0.15971409){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14\end{tabular}}}}%
+    \put(0.70257796,0.02563319){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.70257796,0.0704178){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0.69673649,0.11520234){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.69673649,0.15998696){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=15]{dmg_controller.pdf}}%
   \end{picture}%
 \endgroup%
