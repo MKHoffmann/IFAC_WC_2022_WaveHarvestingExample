@@ -1,10 +1,13 @@
 \section{Introduction}
 \acp{wec} are one of the most promising techniques for extracting energy from ocean waves.\ 
-Although many different form s of \acp{wec} were studied in the last years (\todo{add citations to OWC and this snake like thing?}), their high technological complexity and deployment costs have hindered these technologies from being used in the field.\ 
+Although many different forms of \acp{wec} were studied in the last years (\todo{add citations to OWC and this snake like thing?}), their high technological complexity and deployment costs have hindered these technologies from being used in the field.\ 
 One promising solution to these problems is the usage of \acp{deg}.
-
-Our contribution is the exploration of \ac{mpc} for \ac{deg}-\acp{wec} under the influence of panchromatic waves.\ 
-For that, we evaluate the deviation of the \ac{mpc} solution with a ground truth \ac{ocp} input signal to find that reasonable prediction horizon lengths have to include multiple wave periods.\ 
-Additionally, the ever-changing conditions, under which the presented system operates, demand for an adapting controller if long-time goals are to be met.\ 
+ In a previous iteration, we investigated the behavior of such an \acp{deg}-\acp{wec} in an \acp{ocp} setting using monochromatic waves. [\todo{citation needed}] In reality, ocean waves are irregular and therefore unpredictable. This makes the use of \acp{ocp} difficult since an unpredictable disturbance is difficult to model with an \acp{ocp} algorithm. \todo{ask mathias about explicit ocp and write why its not applicable}. Under the assumption, that limited prediction into the future is possible, a \acp{mpc} algorithm can be used to generate a suitable control signal during operation.
+The \acp{mpc} algorithm solves the \acp{ocp} by iteratively solving a smaller \acp{mpc} bla bla 
+(\todo {maybe mathias can write 2 lines for the mpc algorithm here because you can probably do it better}). 
+Therefore our contribution is the exploration of \ac{mpc} for \ac{deg}-\acp{wec} under the influence of panchromatic waves.\  One key question our paper tries to answer is how long does the \acp{mpc}-horizon need to be. Even though some prediction into the future is possible, the accuracy of the prediction decreases for long predictions. [\todo{find citation for wave sensing }]
+\todo{panchromatic or stochastic. Need to stay consistent. The codebase uses stochastic so if we decide on panch. i need to refactor some stuff}
+For that, we evaluate the deviation of the \todo {mpc closed loop solution needs to be distinguished from mpc solution} \ac{mpc} solution with a ground truth \ac{ocp} input signal to find that reasonable prediction horizon lengths have to include multiple wave periods.\ 
+Additionally, the ever-changing conditions, under which the presented system operates, demand an adapting controller if long-time goals are to be met.\ In a real-world application it would be beneficial to track the accumulation of damage on the membrane (\todo replce damage on ) so a prediction of the time of failure is possible. Even better would be a way to actively control the point in time when the system breaks down. For this, we designed a simple heuristic switching scheme that can adapt the \acp{mpc}. 
 This adaptation is achieved using multi-objective \ac{mpc} with a simple heuristic for changing the weights in the \ac{moocp} scheme.
-We show, that even 
+We show, that even a rudimentary switching scheme is effective in limiting the damage accumulation over an arbitrary threshold.
