@@ -45,7 +45,7 @@ An increase of the damage weighting is allowed after each evaluation, a decrease
 \fontsize{8}{0}\selectfont
 \def\svgwidth{0.97\textwidth}
 \input{images/dmg_controller_energy.pdf_tex}
-\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\ For clarity, only every 100th value is displayed. Top: Accumulated damage over time. Middle: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost. Bottom: Extracted energy over time. For both damage thresholds the extracted energy differs by less than \SI{1}{\percent}.}
+\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\ For clarity, only every 100th value is displayed. Top: Accumulated damage over time. Middle: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost. Bottom: Extracted energy over time. For the lower damage thresholds, the extracted energy reduces only by 0.09, 0.05, and \SI{0.06}{\mega\joule} for the three cases, respectively.}
 \label{fig:weight_control}
 \end{figure*}
 
@@ -54,6 +54,8 @@ In the left example, the waves are all very similar and since the initial weight
 The second example shows a smooth increase into decrease of the index, so that the accumulated damage approaches the target damage without overshooting.\ 
 When sea states which allow for a low damage weight are present, the controller might select weights which are too high for upcoming scenarios.\ 
 This is what leads to the overshoots in the final example.\ 
-Even though the controller does not react fast enough, it only violates the threshold by less than 3 \% before selecting the weighting that accumulates the least damage.
+Even though the controller does not react fast enough, it only violates the threshold by less than 3 \% before selecting the weighting that accumulates the least damage.\ 
+Remarkably, the difference in extracted energy
 
+To analyse why the difference in accumulated energy
 

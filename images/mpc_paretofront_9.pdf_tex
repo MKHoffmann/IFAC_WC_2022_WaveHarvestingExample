@@ -1,0 +1,85 @@
+%% Creator: Inkscape 1.1.2 (b8e25be833, 2022-02-05), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'mpc_paretofront_9.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{367.94316101bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.76035505)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{mpc_paretofront_9.pdf}}%
+    \put(0.02136548,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.8\end{tabular}}}}%
+    \put(0.13194581,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.6\end{tabular}}}}%
+    \put(0.24252715,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.4\end{tabular}}}}%
+    \put(0.35310748,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.2\end{tabular}}}}%
+    \put(0.47795733,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16\end{tabular}}}}%
+    \put(0.57426956,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.8\end{tabular}}}}%
+    \put(0.6848505,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.6\end{tabular}}}}%
+    \put(0.79543184,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.4\end{tabular}}}}%
+    \put(0.90601278,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{mpc_paretofront_9.pdf}}%
+    \put(0.02924699,0.04921935){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(-0.00132838,0.11776404){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.02924699,0.18630894){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(-0.00132838,0.25485363){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1.5\end{tabular}}}}%
+    \put(0.02924699,0.32339852){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(-0.00132838,0.39194321){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2.5\end{tabular}}}}%
+    \put(0.02924699,0.46048811){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
+    \put(-0.00132838,0.5290328){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3.5\end{tabular}}}}%
+    \put(0.02924699,0.59757769){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
+    \put(-0.00132838,0.66612258){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4.5\end{tabular}}}}%
+    \put(0.02924699,0.73466727){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{mpc_paretofront_9.pdf}}%
+    \put(0.65325615,0.6921357){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}valid weights\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{mpc_paretofront_9.pdf}}%
+    \put(0.65325615,0.64878227){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}extreme points\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{mpc_paretofront_9.pdf}}%
+    \put(0.64561013,0.56354313){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}controller range\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
