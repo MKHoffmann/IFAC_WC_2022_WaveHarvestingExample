@@ -72,7 +72,7 @@
     \put(0.05202052,0.40360352){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
     \put(0.05202052,0.48674527){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
     \put(0.05202052,0.56988702){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
-    \put(0.02236247,0.22277023){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Wave excitation\end{tabular}}}}}%
+    \put(0.02236247,0.18){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Wave excitation in Nm\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{wave_excitation.pdf}}%
     \put(0.10662108,0.58651536){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$10^6$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{wave_excitation.pdf}}%
