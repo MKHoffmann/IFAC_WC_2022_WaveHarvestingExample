@@ -278,3 +278,4 @@ TSWLatexianTemp*
 *.tmp
 
 Plots/*
+main.pdf

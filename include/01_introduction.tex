@@ -1,6 +1,6 @@
 \section{Introduction}
-\Acp{wec} are one of the most promising techniques for extracting energy from ocean waves.\ 
-Although many different forms of \acp{wec} were studied in the last years (\todo{add citations to OWC and this snake like thing?}), their high technological complexity and deployment costs have hindered these technologies from being used in the field.\ 
+\Acp{wec} are one of the most promising techniques for  extracting energy from ocean waves.\ 
+Although many different forms of \acp{wec} were studied in the last years (\todo{add citations to OWC and this snake like thing?}), their high technological complexity and deployment costs have hindered these technologies from being used in the field (\cite{Pecher2017}).\ 
 One promising solution to these problems is the usage of \acp{deg}, lightweight polymeric generator with a simple physical principle and cheap production costs.\\
 In a previous iteration, we investigated the behaviour of such an \ac{deg}-\ac{wec} in an optimal control setting using monochromatic waves (see \cite{Hoffmann2022moocp_wcdeg}).\ 
 We showed that multi-objective optimal control gives great trade-offs between accumulated damage and extracted energy, allowing for a reduction of damage by more than 50 \% while only having to give up 1 \% of energy, assuming that we can predict the tidal motion far into the future.\\
@@ -8,7 +8,9 @@ In reality, ocean waves are irregular and therefore unpredictable for long time-
 The \acp{mpc} algorithm computes control inputs by solving an \acp{ocp} with shorter prediction horizon and applying the resulting control input partially.\
 Therefore our contribution is the exploration of \ac{mpc} for \ac{deg}-\acp{wec} under the influence of panchromatic waves.\  One key question our paper tries to answer is how long the \ac{mpc} prediction horizon needs to be, so that the resulting control does not deviate from an optimal solution.\ [\todo{find citation for wave sensing }]
 \todo{panchromatic or stochastic. Need to stay consistent. The codebase uses stochastic so if we decide on panch. i need to refactor some stuff}
-For that, we evaluate the deviation of the \todo {mpc closed loop solution needs to be distinguished from mpc solution} \ac{mpc} solution with a ground truth \ac{ocp} input signal to find that reasonable prediction horizon lengths have to include multiple wave periods.\ 
-Additionally, the ever-changing conditions, under which the presented system operates, demand an adapting controller if long-time goals are to be met.\ In a real-world application it would be beneficial to track the accumulation of damage on the membrane (\todo replce damage on ) so a prediction of the time of failure is possible. Even better would be a way to actively control the point in time when the system breaks down. For this, we designed a simple heuristic switching scheme that can adapt the \acp{mpc}. 
-This adaptation is achieved using multi-objective \ac{mpc} with a simple heuristic for changing the weights in the \ac{moocp} scheme.
+For that, we evaluate the deviation of the \ac{mpc} solution with a ground truth \ac{ocp} input signal to find that reasonable prediction horizon lengths have to include multiple wave periods.\ 
+Additionally, the ever-changing conditions, under which the presented system operates, demand an adapting controller if long-time goals are to be met.\ In a real-world application it would be beneficial to track the accumulation of damage done to the membrane so a prediction of the time of failure is possible. Even better would be a way to actively control the point in time when the system breaks down. For this, we designed a simple heuristic switching scheme that can adapt the \acp{mpc}. 
+This adaptation is achieved using multi-objective \ac{mpc} with a simple heuristic for changing the weights in the multi-objective optimal control scheme.
 We show, that even a rudimentary switching scheme is effective in limiting the damage accumulation over an arbitrary threshold.
+
+To the best of the authors' knowledge, this work is the first to analyse the usage of MPC for DEG-WECs.\ \cite{Faedo2017} published an extensive literature overview over the usage of MPC for general WEC-devices.\ \cite{Brekken2011} uses MPC on the example of a point absorber WEC. \todo{more examples?}
