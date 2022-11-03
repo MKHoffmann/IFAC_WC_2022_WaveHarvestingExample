@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{367.94316101bp}%
+    \setlength{\unitlength}{420bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,36 +50,39 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.76035505)%
+  \begin{picture}(1,0.75)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{mpc_paretofront_9.pdf}}%
-    \put(0.02136548,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.8\end{tabular}}}}%
-    \put(0.13194581,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.6\end{tabular}}}}%
-    \put(0.24252715,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.4\end{tabular}}}}%
-    \put(0.35310748,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.2\end{tabular}}}}%
-    \put(0.47795733,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16\end{tabular}}}}%
-    \put(0.57426956,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.8\end{tabular}}}}%
-    \put(0.6848505,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.6\end{tabular}}}}%
-    \put(0.79543184,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.4\end{tabular}}}}%
-    \put(0.90601278,0.00058657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.2\end{tabular}}}}%
+    \put(0.09464321,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.8\end{tabular}}}}%
+    \put(0.19151768,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.6\end{tabular}}}}%
+    \put(0.28839304,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.4\end{tabular}}}}%
+    \put(0.3852675,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16.2\end{tabular}}}}%
+    \put(0.49464286,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-16\end{tabular}}}}%
+    \put(0.57901768,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.8\end{tabular}}}}%
+    \put(0.67589268,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.6\end{tabular}}}}%
+    \put(0.77276804,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.4\end{tabular}}}}%
+    \put(0.86964304,0.05511911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15.2\end{tabular}}}}%
+    \put(0.34375036,0.00809518){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Extracted energy in MJ\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{mpc_paretofront_9.pdf}}%
-    \put(0.02924699,0.04921935){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(-0.00132838,0.11776404){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
-    \put(0.02924699,0.18630894){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
-    \put(-0.00132838,0.25485363){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1.5\end{tabular}}}}%
-    \put(0.02924699,0.32339852){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
-    \put(-0.00132838,0.39194321){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2.5\end{tabular}}}}%
-    \put(0.02924699,0.46048811){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
-    \put(-0.00132838,0.5290328){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3.5\end{tabular}}}}%
-    \put(0.02924699,0.59757769){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
-    \put(-0.00132838,0.66612258){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4.5\end{tabular}}}}%
-    \put(0.02924699,0.73466727){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0.10154786,0.09740893){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.07476214,0.15588232){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.10154786,0.21435571){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.07476214,0.27282911){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1.5\end{tabular}}}}%
+    \put(0.10154786,0.3313025){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.07476214,0.38977589){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2.5\end{tabular}}}}%
+    \put(0.10154786,0.44824929){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
+    \put(0.07476214,0.50672268){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3.5\end{tabular}}}}%
+    \put(0.10154786,0.56519607){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
+    \put(0.07476214,0.62366946){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4.5\end{tabular}}}}%
+    \put(0.10154786,0.68214286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0.05869071,0.33125036){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Damage\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{mpc_paretofront_9.pdf}}%
-    \put(0.65325615,0.6921357){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}valid weights\end{tabular}}}}%
+    \put(0.63035714,0.64464286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}valid weights\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{mpc_paretofront_9.pdf}}%
-    \put(0.65325615,0.64878227){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}extreme points\end{tabular}}}}%
+    \put(0.63035714,0.60625){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}extreme points\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{mpc_paretofront_9.pdf}}%
-    \put(0.64561013,0.56354313){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}controller range\end{tabular}}}}%
+    \put(0.63035714,0.56785714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}weight controller\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{mpc_paretofront_9.pdf}}%
   \end{picture}%
 \endgroup%

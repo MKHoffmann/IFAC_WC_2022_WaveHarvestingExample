@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{892.85128784bp}%
+    \setlength{\unitlength}{893.49664307bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,146 +50,146 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.51188564)%
+  \begin{picture}(1,0.50983711)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{dmg_controller_energy.pdf}}%
-    \put(0.03073774,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.074698,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.11655833,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.1613586,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.20615886,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.25095921,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.29575948,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.03983177,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.07872389,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.12055398,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.16532189,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.2100898,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.25485779,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.2996257,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{dmg_controller_energy.pdf}}%
-    \put(0.02356972,0.37944478){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.01516967,0.40265951){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
-    \put(0.01516967,0.42587415){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
-    \put(0.01516967,0.44908888){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
-    \put(0.01516967,0.47230361){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
-    \put(0.01516967,0.49551826){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
-    \put(0.00853801,0.398765){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Acc. Damage\end{tabular}}}}}%
+    \put(0.02763254,0.37749192){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.01923855,0.40068988){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
+    \put(0.01923855,0.42388776){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
+    \put(0.01923855,0.44708572){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
+    \put(0.01923855,0.47028368){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
+    \put(0.01923855,0.49348155){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.00893038,0.39176178){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Acc. Damage\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{dmg_controller_energy.pdf}}%
-    \put(0.06769798,0.49044009){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}threshold 0.3\end{tabular}}}}%
+    \put(0.06837133,0.49008585){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}threshold 0.3\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{dmg_controller_energy.pdf}}%
-    \put(0.06769798,0.47593084){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}threshold 0.5\end{tabular}}}}%
+    \put(0.06837133,0.47558708){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}threshold 0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{dmg_controller_energy.pdf}}%
-    \put(0.03073774,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.074698,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.11655833,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.1613586,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.20615886,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.25095921,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.29575948,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.03983177,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.07872389,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.12055398,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.16532189,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.2100898,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.25485779,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.2996257,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{dmg_controller_energy.pdf}}%
-    \put(0.02356972,0.20388363){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6\end{tabular}}}}%
-    \put(0.02356972,0.23559384){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8\end{tabular}}}}%
-    \put(0.01768968,0.26730405){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
-    \put(0.01768968,0.29901426){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12\end{tabular}}}}%
-    \put(0.01768968,0.33072446){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14\end{tabular}}}}%
-    \put(0.00984958,0.21942382){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Selected index\end{tabular}}}}}%
+    \put(0.02763254,0.20205757){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6\end{tabular}}}}%
+    \put(0.02763254,0.23374488){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8\end{tabular}}}}%
+    \put(0.02175675,0.26543218){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.02175675,0.29711949){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12\end{tabular}}}}%
+    \put(0.02175675,0.32880679){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14\end{tabular}}}}%
+    \put(0.0122435,0.22598052){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Selected index\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{dmg_controller_energy.pdf}}%
-    \put(0.03577778,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.074698,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.11655833,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.1613586,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.20615886,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.25095921,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.29575948,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
-    \put(0.14959869,0.00015432){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
+    \put(0.03983177,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.07872389,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.12055398,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.16532189,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.2100898,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.25485779,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.2996257,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.15357048,0.00015421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=8]{dmg_controller_energy.pdf}}%
-    \put(0.01432966,0.02748247){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-20\end{tabular}}}}%
-    \put(0.01432966,0.05881182){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15\end{tabular}}}}%
-    \put(0.01432966,0.09014109){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-10\end{tabular}}}}%
-    \put(0.0202097,0.12147044){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-5\end{tabular}}}}%
-    \put(0.02356972,0.1527997){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.00856659,0.03672262){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Energy in MJ\end{tabular}}}}}%
+    \put(0.01839915,0.02578383){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-20\end{tabular}}}}%
+    \put(0.01839915,0.05709055){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15\end{tabular}}}}%
+    \put(0.01839915,0.08839718){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-10\end{tabular}}}}%
+    \put(0.02427494,0.11970391){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-5\end{tabular}}}}%
+    \put(0.02763254,0.15101054){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.00888591,0.02662331){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Extracted Energy\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=9]{dmg_controller_energy.pdf}}%
-    \put(0.36925996,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.41322022,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.45508055,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.49988082,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.54468108,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.58948143,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.6342817,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.37643069,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.4153228,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.4571529,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.50192081,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.54668871,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.5914567,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.63622461,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=10]{dmg_controller_energy.pdf}}%
-    \put(0.36209194,0.37944478){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.35369189,0.40265951){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
-    \put(0.35369189,0.42587415){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
-    \put(0.35369189,0.44908888){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
-    \put(0.35369189,0.47230361){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
-    \put(0.35369189,0.49551826){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.36423145,0.37749192){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.35583746,0.40068988){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
+    \put(0.35583746,0.42388776){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
+    \put(0.35583746,0.44708572){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
+    \put(0.35583746,0.47028368){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
+    \put(0.35583746,0.49348155){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=11]{dmg_controller_energy.pdf}}%
-    \put(0.36925996,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.41322022,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.45508055,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.49988082,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.54468108,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.58948143,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.6342817,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.37643069,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.4153228,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.4571529,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.50192081,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.54668871,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.5914567,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.63622461,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=12]{dmg_controller_energy.pdf}}%
-    \put(0.36209194,0.20388363){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.36209194,0.24616388){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
-    \put(0.3562119,0.28844421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
-    \put(0.3562119,0.33072446){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15\end{tabular}}}}%
+    \put(0.36423145,0.20205757){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.36423145,0.24430728){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0.35835566,0.28655708){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.35835566,0.32880679){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=13]{dmg_controller_energy.pdf}}%
-    \put(0.71282221,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.75188247,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.79388275,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.83882304,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.88376334,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.92870363,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.97364393,0.36891674){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.7130296,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.75206164,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.79403158,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.83893942,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.88384725,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.92875509,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.97366293,0.36697148){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=14]{dmg_controller_energy.pdf}}%
-    \put(0.70061416,0.37944478){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.69221411,0.40265951){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
-    \put(0.69221411,0.42587415){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
-    \put(0.69221411,0.44908888){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
-    \put(0.69221411,0.47230361){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
-    \put(0.69221411,0.49551826){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.70083037,0.37749192){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.69243638,0.40068988){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.1\end{tabular}}}}%
+    \put(0.69243638,0.42388776){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.2\end{tabular}}}}%
+    \put(0.69243638,0.44708572){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.3\end{tabular}}}}%
+    \put(0.69243638,0.47028368){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.4\end{tabular}}}}%
+    \put(0.69243638,0.49348155){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=15]{dmg_controller_energy.pdf}}%
-    \put(0.71282221,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.75188247,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.79388275,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.83882304,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.88376334,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.92870363,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.97364393,0.19335559){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.7130296,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.75206164,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.79403158,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.83893942,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.88384725,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.92875509,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.97366293,0.19153714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=16]{dmg_controller_energy.pdf}}%
-    \put(0.70061416,0.20388363){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.70061416,0.24616388){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
-    \put(0.69473412,0.28844421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
-    \put(0.69473412,0.33072446){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15\end{tabular}}}}%
+    \put(0.70083037,0.20205757){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.70083037,0.24430728){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0.69495458,0.28655708){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.69495458,0.32880679){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=17]{dmg_controller_energy.pdf}}%
-    \put(0.37429999,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.41322022,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.45508055,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.49988082,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.54468108,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.58948143,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.6342817,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
-    \put(0.48812091,0.00015432){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
+    \put(0.37643069,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.4153228,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.4571529,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.50192081,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.54668871,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.5914567,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.63622461,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.49016939,0.00015421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=18]{dmg_controller_energy.pdf}}%
-    \put(0.35285188,0.02748247){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-20\end{tabular}}}}%
-    \put(0.35285188,0.05919268){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15\end{tabular}}}}%
-    \put(0.35285188,0.09090289){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-10\end{tabular}}}}%
-    \put(0.35873192,0.1226131){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-5\end{tabular}}}}%
-    \put(0.36209194,0.15432331){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.35499807,0.02578383){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-20\end{tabular}}}}%
+    \put(0.35499807,0.05747113){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15\end{tabular}}}}%
+    \put(0.35499807,0.08915844){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-10\end{tabular}}}}%
+    \put(0.36087386,0.12084574){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-5\end{tabular}}}}%
+    \put(0.36423145,0.15253304){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=19]{dmg_controller_energy.pdf}}%
-    \put(0.71282221,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
-    \put(0.75188247,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
-    \put(0.79388275,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
-    \put(0.83882304,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
-    \put(0.88376334,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
-    \put(0.92870363,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
-    \put(0.97364393,0.01695443){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
-    \put(0.82706305,0.00015432){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
+    \put(0.7130296,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.75206164,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.79403158,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.83893942,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.88384725,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.92875509,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.97366293,0.01526339){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3000\end{tabular}}}}%
+    \put(0.82718792,0.00015421){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time in s\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=20]{dmg_controller_energy.pdf}}%
-    \put(0.6913741,0.02748247){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-20\end{tabular}}}}%
-    \put(0.6913741,0.05919268){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15\end{tabular}}}}%
-    \put(0.6913741,0.09090289){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-10\end{tabular}}}}%
-    \put(0.69725414,0.1226131){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-5\end{tabular}}}}%
-    \put(0.70061416,0.15432331){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.69159698,0.02578383){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-20\end{tabular}}}}%
+    \put(0.69159698,0.05747113){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-15\end{tabular}}}}%
+    \put(0.69159698,0.08915844){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-10\end{tabular}}}}%
+    \put(0.69747277,0.12084574){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-5\end{tabular}}}}%
+    \put(0.70083037,0.15253304){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=21]{dmg_controller_energy.pdf}}%
   \end{picture}%
 \endgroup%

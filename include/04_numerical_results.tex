@@ -6,6 +6,7 @@ The panchromatic waves were generated using 50 frequencies with a base frequency
 %\subsection{Fractional Brownian Motion Noise}
 
 \subsection{Accuracy of model-predictive control}
+\label{sec:accuracy}
 When employing \ac{mpc}, we cannot expect to get the same results as an \ac{ocp} with longer prediction horizon would give.\ 
 By shifting the prediction horizon each time step, new information is provided, potentially leading to largely different input sequences compared to previous solutions.\
 \figref{fig:mpc_error} shows the mean absolute error (MAE) between the ground truth \ac{ocp} solution over a prediction horizon of \SI{320}{\second} and $u_\mathrm{MPC}$.\ 
@@ -24,7 +25,7 @@ In the following, we will use a \SI{60}{\second} horizon for a good performance 
 
 \subsection{Weight selection algorithm}
 In this section, we evaluate the performance of the simple heuristic weight selection algorithm by simulating the system's behaviour for different sea states.\ 
-The $\nw=15$ predetermined weights are evenly distributed between 0.05 and 0.95 with $w_1+w_2=1$.\ 
+The $\nw=15$ predetermined weights $w_2$ are evenly distributed between 0.05 and 0.95 with $w_1+w_2=1$.\ 
 As shown in \figref{fig:PF}, this does not result in an even distribution of Pareto points along the Pareto front, but, as we will show, even this very simple approach yields acceptable results.\
 \begin{figure}[htb]
 	\centering
@@ -35,19 +36,12 @@ As shown in \figref{fig:PF}, this does not result in an even distribution of Par
 	\label{fig:PF}
 \end{figure}
 
-Alternatively, the weights could be found using the adaptive weight determination scheme by \cite{Ryu2019}.\
-\\ 
+%Alternatively, the weights could be found using the adaptive weight determination scheme by \cite{Ryu2019}.\
+%\\ 
 We compare for three different wave scenarios the performance of the \ac{mpc} with weight controller for two target damage values $\Jd = \left\{0.3, 0.5\right\}$.\ 
 The performance of a weighting is evaluated every \SI{25}{\second}.\ 
-An increase of the damage weighting is allowed after each evaluation, a decrease only every two evaluations.
-\begin{figure*}[htb]
-\centering
-\fontsize{8}{0}\selectfont
-\def\svgwidth{0.97\textwidth}
-\input{images/dmg_controller_energy.pdf_tex}
-\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\ For clarity, only every 100th value is displayed. Top: Accumulated damage over time. Middle: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost. Bottom: Extracted energy over time. For the lower damage thresholds, the extracted energy reduces only by 0.09, 0.05, and \SI{0.06}{\mega\joule} for the three cases, respectively.}
-\label{fig:weight_control}
-\end{figure*}
+An increase of the damage weighting is allowed after each evaluation, a decrease only every two evaluations to put more emphasis on keeping the damage low.
+
 
 \figref{fig:weight_control} shows the performance of this heuristic weight control for the three different wave excitations by displaying the accumulated damage in the top and the selected index in the bottom plots.\ 
 In the left example, the waves are all very similar and since the initial weighting would not exploit all the damage, the damage weight is steadily decreased until, for the 0.5 threshold, the index stays around 12.\
@@ -57,5 +51,29 @@ This is what leads to the overshoots in the final example.\
 Even though the controller does not react fast enough, it only violates the threshold by less than 3 \% before selecting the weighting that accumulates the least damage.\ 
 Remarkably, the difference in extracted energy
 
-To analyse why the difference in accumulated energy
+To analyse why the difference in accumulated energy is so small, we compare the weight-controlled \ac{mpc} with the fixed-weight MPC.\ 
+In addition to the 15 weights used in the weight-controller, we also use 0.99 and 0.01 to approximate the extreme points that minimise one of the cost functions.\ 
+\begin{figure}[htb]
+	\centering
+	\fontsize{8}{0}\selectfont
+	\def\svgwidth{0.49\textwidth}
+	\input{images/mpc_paretofront_9.pdf_tex}
+	\caption{The accumulated costs for the fixed weight MPC with the valid weights for the weight-controller and the extreme point approximations for the left case from \figref{fig:weight_control}.\ The costs resulting from the weight controller with threshold 0.5 dominate some of the fixed-weight costs.}
+	\label{fig:mpc_pf}
+\end{figure}
 
+\figref{fig:mpc_pf} shows that the difference in extractable energy for fixed weights is less than \SI{1}{\mega\joule} or \SI{6}{\percent}.\ 
+The weight-controlled MPC's performance is not only very close to a weighting of $[0.6929 0.3071]$, confirming the assumption of moderate performance, it also dominates it.\ 
+Thus, in this scenario, the weight controller even outperforms some of the fixed-weight MPC controls, showing that the fixed-weight MPC is not Pareto-optimal, even if the OCP-solutions are Pareto-optimal.\ 
+This discrepancy is likely due to the deviations shows in section \ref{sec:accuracy}.
+ 
+
+
+\begin{figure*}[htb]
+	\centering
+	\fontsize{8}{0}\selectfont
+	\def\svgwidth{0.97\textwidth}
+	\input{images/dmg_controller_energy.pdf_tex}
+	\caption{Evaluation of the \ac{mpc} with weight controller for three wave scenarios and two target damage values.\ For clarity, only every 100th value is displayed. Top: Accumulated damage over time. Middle: The selected weight index \iw over time. A lower index corresponds to a higher weighting for the damage cost. Bottom: Extracted energy over time. For the lower damage thresholds, the extracted energy reduces only by 0.09, 0.05, and \SI{0.06}{\mega\joule} for the three cases, respectively.}
+	\label{fig:weight_control}
+\end{figure*}
