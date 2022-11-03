@@ -17,13 +17,13 @@ Remark, that the term $\cos^2(\theta)$ is simplified to 1, the same is done in t
 The extended state reads
 $\xvek = \begin{bmatrix}
 	{\theta} &
-	{\vartheta} & 
+	{\delta} & 
 	{z{^\intercal}} &
 	{\Upsilon_1} &
 	{\Upsilon_2}
 \end{bmatrix}^\intercal$, with the initial value $\xvek_0 = \begin{bmatrix}
 {\theta_0} &
-{\vartheta_0} & 
+{\delta_0} & 
 {z_0{^\intercal}} &
 {0} &
 {0}
@@ -59,12 +59,12 @@ The quadratic cost terms push the solution to the equilibrium position $\theta =
 \subsection{Wave generation}
 The stochastic wave is modeled as a superposition of $n_\mathrm{f}$ scaled and shifted sine waves. The amplitude scaling aims to reconstruct the Brentschneider wave spectrum, which, in its general form, reads
 \begin{align*}
-S_w(w)=A_B w^{-5} \exp \left(-B_B w^{-4}\right).
+S_\mathrm{w}(w)=A_\mathrm{B} w^{-5} \exp \left(-B_\mathrm{B} w^{-4}\right).
 \end{align*}
 The Brentschneider spectrum describes an average sea state when more specific climatic conditions are not available. 
 It can be shown that, for sufficiently many sine waves are used and the amplitudes of the sine waves fulfil
 \begin{align*}
-A_i=\sqrt{2 S_\omega\left(\omega_i\right) \Delta \omega_i},
+A_i=\sqrt{2 S_\mathrm{w}(\omega_i) \Delta \omega_i},
 \end{align*}
 the final wave will correspond to the desired spectral distribution.
 The parameters $A_\mathrm{B}$ and $B_\mathrm{B}$ can be modified to yield a wave with the desired overall force and frequency profile. Since for this paper, no specific sea state is emulated, the parameters have been chosen in such a way as to keep the resulting model trajectories within the modelling bounds.\\
