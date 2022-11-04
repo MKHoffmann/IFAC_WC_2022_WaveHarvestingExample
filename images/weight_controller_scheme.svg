@@ -8,7 +8,7 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
-   sodipodi:docname="weight_controller_scheme.svg"
+   sodipodi:docname="weight_controller_scheme.pdf"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="3.7543719"
-     inkscape:cx="242.38408"
-     inkscape:cy="108.14059"
+     inkscape:zoom="7.5087439"
+     inkscape:cx="287.93098"
+     inkscape:cy="70.051664"
      inkscape:window-width="2560"
      inkscape:window-height="1369"
      inkscape:window-x="-8"
@@ -68,6 +68,11 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-63.125558,-70.313655)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 152.48154,75.948582 V 101.8755"
+       id="path38952"
+       sodipodi:nodetypes="cc" />
     <g
        id="g6268"
        transform="translate(-12.956376,11.162416)">
@@ -98,13 +103,13 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-       x="65.422218"
+       x="67.755539"
        y="73.571335"
        id="text8679"><tspan
          sodipodi:role="line"
          id="tspan8677"
          style="font-size:4.23333px;text-align:start;text-anchor:start;stroke-width:0.264583"
-         x="65.422218"
+         x="67.755539"
          y="73.571335">$d(t)$</tspan></text>
     <path
        style="fill:#000000;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
@@ -150,24 +155,24 @@
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-       x="144.51221"
+       x="145.04137"
        y="92.03318"
        id="text22409"><tspan
          sodipodi:role="line"
          id="tspan22407"
          style="font-size:4.23333px;text-align:start;text-anchor:start;stroke-width:0.264583"
-         x="144.51221"
+         x="145.04137"
          y="92.03318">$\xi$</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
-       x="155.83777"
+       x="155.30861"
        y="92.03318"
        id="text25721"><tspan
          sodipodi:role="line"
          id="tspan25719"
          style="font-size:4.23333px;text-align:start;text-anchor:start;stroke-width:0.264583"
-         x="155.83777"
+         x="155.30861"
          y="92.03318">$J_2$</tspan></text>
     <g
        id="g28258"
@@ -225,11 +230,6 @@
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="M 152.48154,75.948582 V 101.8755"
-       id="path38952"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
        d="M 141.06485,107.09177 H 131.2597"
        id="path39011"
        sodipodi:nodetypes="cc" />
@@ -244,5 +244,21 @@
          style="font-size:4.23333px;text-align:start;text-anchor:start;stroke-width:0.264583"
          x="135.70808"
          y="111.02515">$w_1, w_2$</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 88.681722,101.79643 H 71.468205 l 0.0439,-19.998851 h 16.408627"
+       id="path59139"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.58611px;line-height:1.25;font-family:sans-serif;text-align:start;text-anchor:start;stroke-width:0.264583"
+       x="72.983719"
+       y="92.137825"
+       id="text60815"><tspan
+         sodipodi:role="line"
+         id="tspan60813"
+         style="font-size:4.58611px;text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="72.983719"
+         y="92.137825">$u$</tspan></text>
   </g>
 </svg>

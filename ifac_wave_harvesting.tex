@@ -16,7 +16,7 @@
 \begin{document}
 	\begin{frontmatter}
 		
-		\title{Multi-objective Model-Predictive Control for Dielectric Elastomer Wave Harvesters.} 
+		\title{Multi-objective Model-Predictive Control for Dielectric Elastomer Wave Harvesters} 
 		% Title, preferably not more than 10 words.
 		
 		\author[First]{Matthias K. Hoffmann} 
@@ -32,7 +32,14 @@
 			$^{*}$ and $^{**}$ from Saarland University, Saarbrücken, Germany.}
 		
 		\begin{abstract}                % Abstract of not more than 250 words.
-			
+		\Acp{wec} are a promising technique for extracting renewable energy from ocean waves.\ 
+		Extending previous work, here, we consider the multi-objective \ac{mpc} of \ac{deg}-based \acp{wec} under the influence of stochastic waves.\
+		The control aims to minimise the accumulated damage of the \ac{wec} while maximising the extracted energy.\
+		First, we analyse how close the MPC performance is to the ground truth optimal solution to find a good trade-off between accuracy and shortness of prediction horizon length.\ 
+		As the ocean state changes, we argue that the control needs to be adapted.\
+		We realize this adaptation by changing the weighting of the cost functions in a simple heuristic that aims to fulfil the long-time goal of accumulating a certain damage in a fixed time.\ 
+		A simulated case-study is done to show the success of the MPC for this type of application.\
+		The heuristic even outperforms some of the fixed weight MPC algorithms.
 		\end{abstract}
 		
 		\begin{keyword}
@@ -48,6 +55,5 @@
 	\input{include/03_methods}
 	\input{include/04_numerical_results}
 	\input{include/05_conclusion}
-	
 	\bibliography{references.bib}
 \end{document}
