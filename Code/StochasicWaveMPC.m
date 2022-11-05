@@ -191,9 +191,9 @@ end
 
 function cost = cost_energy(x, u, d)
 persistent Ch S R0
-global PathToParameters
+
 if isempty(Ch) || isempty(S) || isempty(R0)
-    load(PathToParameters ,'Ch', 'S', 'R0');
+    load("PolySurge_inputs.mat" ,'Ch', 'S', 'R0');
 end
 cost = (Ch*x(1).^2 + x(3:5)'*S*x(3:5) - d .* x(1))*1e-6 + u/R0;
 end
