@@ -281,3 +281,19 @@ Plots/*
 main.pdf
 
 ifac_wave_harvesting.pdf
+
+Code/FBM.m
+
+Code/FBMNoise.m
+
+Code/HamiltonianPathForFBMNew.m
+
+Code/initializeOCPENERGY.m
+
+Code/MPC_Parameters.mat
+
+Code/Waves_0_5_seconds.mat
+
+Code/FBMStochasticWave.m
+
+Code/MAthias_Weight_Controler.m
