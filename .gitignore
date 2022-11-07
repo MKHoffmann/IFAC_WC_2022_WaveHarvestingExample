@@ -277,7 +277,7 @@ TSWLatexianTemp*
 
 *.tmp
 
-Plots/*
+Plots/DamageController/*
 main.pdf
 
 ifac_wave_harvesting.pdf

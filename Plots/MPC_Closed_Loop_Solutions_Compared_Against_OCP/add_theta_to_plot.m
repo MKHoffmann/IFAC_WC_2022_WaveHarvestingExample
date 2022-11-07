@@ -1,0 +1,10 @@
+filename = "MPC_Horizon_10.fig";
+fig = open(filename);
+fig.Children(1).FontSize=12;
+fig.Children(1).String{3} = 'Wave Excitation';
+fig.Children(2).Children(1).LineWidth=2;
+fig.Children(2).Children(2).LineWidth=2;
+ax = gca;
+ax.XAxis.FontSize=12;
+ax.YAxis.FontSize=12;
+ax.YAxis.Label.String = '$u$ in \SI{}{\kilo\volt^2}';
