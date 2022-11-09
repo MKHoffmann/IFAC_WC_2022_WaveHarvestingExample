@@ -23,6 +23,26 @@ In the following, we will use a \SI{60}{\second} horizon for a good performance 
 	\label{fig:mpc_error}
 \end{figure}
 
+The difference in control input can be seen in the following \figref{arg1}
+
+\begin{figure}[htb]
+	\centering
+	\fontsize{8}{0}\selectfont
+	\def\svgwidth{0.49\textwidth}
+	\input{images/MPC_Horizon_60.pdf_tex}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\fontsize{8}{0}\selectfont
+	\def\svgwidth{0.49\textwidth}
+	\input{images/mpc_comparison_horizon.pdf_tex}
+	\caption{}
+	\label{}
+\end{figure}
+
 \subsection{Weight selection algorithm}
 In this section, we evaluate the performance of the simple heuristic weight selection algorithm by simulating the system's behaviour for different sea states.\ 
 The $\nw=15$ predetermined weights $w_2$ are evenly distributed between 0.05 and 0.95 with $w_1+w_2=1$.\ 
