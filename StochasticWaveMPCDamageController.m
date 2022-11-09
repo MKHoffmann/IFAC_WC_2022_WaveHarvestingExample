@@ -10,7 +10,7 @@
 DamageTarget        = 0.35;   % [0.02-0.6]  Damage accumulates linearly. So if you want to simulate
                               %             a larger horizon you need to scale the damage linearly.
 MPCtimehorizon      = 60;     % [1-70]      MCP Timehorizon. After ~70 seconds the solution does not improve.
-timehorizon         = 3000;   % [1-inf]     Time how long the system is simulated.
+simulation_time     = 3000;   % [1-inf]     Time how long the system is simulated.
 timestep            = 0.5;    % [0.05-1]    MPC timestep, i.e. the discretisation of the ocp.
                               %             A step larger then 1 is not recommended.
 AdjustPointInterval = 50;     % [25-100]    Number of steps after which the Pareto-Point is updated. 
@@ -20,6 +20,8 @@ Point               = 6;      % [1-nPoints] The point will be adjusted over the 
                               %             Still, a starting weight needs to be provided
 nPoints             = 15;     % [5-100]     Number of discrete Weights/Points to switch between.
 
+excitation_factor = 1;       % [0.1-2]  Factor for s aling the wave excitation. Warning: The model's accuracy
+                             %          is reduced for theta greater than 30°.
 
 plotting            = true;   % If plotting, the accumulation of the damage is shown as it progresses.
 saving              = true;   % If saving, the results will be saved to the "Results" folder.
@@ -43,7 +45,7 @@ weights = [weight; 1-weight]';                      % Weight for Weighted Sum MO
 uMax            = 33^2;                             % Input voltage is limited
 
 % linear approximation of desired damage at increment.
-DamageAtIncrement = @(t) interp1([0 timehorizon],[0 DamageTarget],t,"linear");
+DamageAtIncrement = @(t) interp1([0 simulation_time],[0 DamageTarget],t,"linear");
 
 % Construct the OCP The simulation is started with the flap already in
 % motion. The initial state x0 represents the state after 100 seconds of
@@ -53,7 +55,7 @@ DamageAtIncrement = @(t) interp1([0 timehorizon],[0 DamageTarget],t,"linear");
 x0 =   [0.0515     0.1392   314.4363   94.1062  190.4844         0         0 ]';
 
 ocp = casadi.Opti();
-ocp.solver('ipopt')
+ocp.solver('ipopt', struct, struct('print_level', 0))
 
 % The differential equation describing the DEG-WEC plus the integrands of
 % the cost functions.
@@ -80,7 +82,7 @@ ocp.subject_to( h_zero )
 % Set initial values, apply wave disturbance,
 % cost function and constrains 
 try
-    Wave_function = @(t) interp1(WaveData.time, WaveData.(['Wave_Seed_' num2str(Seed)]), t);
+    Wave_function = @(t) excitation_factor*interp1(WaveData.time, WaveData.(['Wave_Seed_' num2str(Seed)]), t);
 catch
     error('Please choose Seed between 1 and 10 or provide your own wave data!')
 end
@@ -101,7 +103,7 @@ ocp.subject_to(0 <= u <= uMax);
 % PointHist     (:,:) : Keeps track of the current and past Pareto-Points
 % cost_hist     (1,:) : Keeps track of the harvested energy
 % cost_hist     (2,:) : Keeps track of the accumulated damage
-starttime = 0:timestep:timehorizon;
+starttime = 0:timestep:simulation_time;
 ResultsMPC = cell(length(starttime),1);
 AppliedSignal=[];
 cost_hist = [];
@@ -110,8 +112,8 @@ PointHist = [];
 
 if (plotting)
     close all
-    f1 = openfig(['src' filesep 'DamageControlerPlotting.fig']);
-    plot(0:5:timehorizon, arrayfun(@(t) DamageAtIncrement(t), 0:5:timehorizon), LineWidth=6);
+    f1 = openfig(['src' filesep 'DamageControllerPlotting.fig']);
+    plot(0:5:simulation_time, arrayfun(@(t) DamageAtIncrement(t), 0:5:simulation_time), LineWidth=6);
 
 end
 
@@ -125,10 +127,10 @@ for i = 1:length(starttime)
         % reset solver for warmstarting
 
         ocp.set_value(x(:,1), solOld.value(x(:,2)));
-        ocp.set_value(u(1), solOld.value(u(2)));
+        ocp.set_value(u(1),   solOld.value(u(2)));
 
-        ocp.set_initial(x(:,2:end-1), solOld.value(x(:,1:end-2)));
-        ocp.set_initial(u(2:end-1), solOld.value(u(1:end-2)));
+        ocp.set_initial(ocp.x,     solOld.value(ocp.x));
+        ocp.set_initial(ocp.lam_g, solOld.value(ocp.lam_g));
 
     end
     if i == 2
@@ -136,7 +138,7 @@ for i = 1:length(starttime)
         % (faster because we have good initial guess from previous MPC)
         solver_opt = struct('warm_start_init_point', 'yes', 'mu_init', 1e-6, 'warm_start_mult_bound_push',1e-8, ...
             'warm_start_slack_bound_push', 1e-8, 'warm_start_bound_push', 1e-6, ...
-            'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8);
+            'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8, 'print_level', 0);
         ocp.solver('ipopt', struct(), solver_opt)
     end
     try
@@ -144,11 +146,11 @@ for i = 1:length(starttime)
     catch
         % The chosen warmstart parameters do not always work. If that is the case
         % disable warmstart for one iteration step.
-        ocp.solver('ipopt')
+        ocp.solver('ipopt', struct, struct('print_level', 0))
         solOld = ocp.solve();
         solver_opt = struct('warm_start_init_point', 'yes', 'mu_init', 1e-6, 'warm_start_mult_bound_push',1e-8, ...
             'warm_start_slack_bound_push', 1e-8, 'warm_start_bound_push', 1e-6, ...
-            'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8);
+            'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8, 'print_level', 0);
         ocp.solver('ipopt', struct(), solver_opt)
 
     end
@@ -168,7 +170,7 @@ for i = 1:length(starttime)
     % Here the heuristic Point adjustmenet is done
     if ((mod(i, AdjustPointInterval) == 0))
         dmg_per_s = (cost_hist(2,end)-cost_hist(2,end-(AdjustPointInterval-1)))/(AdjustPointInterval*timestep);
-        dt = timehorizon - starttime(i)+timestep;
+        dt = simulation_time - starttime(i)+timestep;
         current_dmg = (cost_hist(2,end));
 
         if sum((AppliedSignal(2,end-(AdjustPointInterval-2):end))) < 50
@@ -194,7 +196,7 @@ if (saving)
     if ~exist('Results', 'dir')
        mkdir('Results')
     end
-    save(['Results' filesep 'DamageControler_Horizon_eq_' num2str(timehorizon) '_seconds_Damage_eq_' num2str(DamageTarget) '_Seed_eq_' num2str(Seed) '.mat'  ],"ResultsMPC","cost_hist","PointHist","DamageTarget")
+    save(['Results' filesep 'DamageControler_Horizon_eq_' num2str(simulation_time) '_seconds_Damage_eq_' num2str(DamageTarget) '_Seed_eq_' num2str(Seed) '.mat'  ],"ResultsMPC","cost_hist","PointHist","DamageTarget")
 end
 
 % Damage cost function

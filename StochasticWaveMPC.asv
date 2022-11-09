@@ -6,7 +6,7 @@
 % values
 
 MPCtimehorizon  = 60;          % [1-70]   MCP Timehorizon. After ~70 seconds the solution does not improve.
-simulation_time = 60;         % [1-inf]  How long
+simulation_time = 100;         % [1-inf]  How long
 timestep        = 0.5;         % [0.05-1] MPC timestep, i.e. the discretisation of the ocp.
                                %          A step larger then 1 is not recommended.
 Seed            = 4  ;         % [1-10]   Seed of the Wave distrurbance. Seeds [1-10] have been provided.
@@ -18,7 +18,7 @@ excitation_factor = 1;       % [0.1-2]  Factor for s aling the wave excitation. 
                                %          is reduced for theta greater than 30°.
                                       
 
-plotting        = true;        % If plotting the solution of the MPC is shown as it progresses.
+plotting        = false;        % If plotting the solution of the MPC is shown as it progresses.
                                % but slows down the algorithm!
 saving          = false;       % If saving, the results will be saved to the "Results" folder.
              
@@ -47,7 +47,7 @@ x0 =   [0.0515     0.1392   314.4363   94.1062  190.4844         0         0 ]';
 
 % set solver
 ocp = casadi.Opti();
-ocp.solver('ipopt', struct, struct('print_level', 0))
+ocp.solver('ipopt', [], struct(""))
 
 % The differential equation describing the DEG-WEC plus the integrands of
 % the cost functions.
@@ -127,7 +127,7 @@ for i = 1:length(starttime)
         %  (faster because we have good initial guess from precious MPC)
         solver_opt = struct('warm_start_init_point', 'yes', 'mu_init', 1e-6, 'warm_start_mult_bound_push',1e-8, ...
             'warm_start_slack_bound_push', 1e-8, 'warm_start_bound_push', 1e-6, ...
-            'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8, 'print_level', 0);
+            'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8);
         ocp.solver('ipopt', struct(), solver_opt)
     end
     try
@@ -135,11 +135,11 @@ for i = 1:length(starttime)
     catch
         % The chosen warmstart parameters do not always work. If that is the case
         % disable warmstart for one iteration step.
-        ocp.solver('ipopt', struct, struct('print_level', 0))
+        ocp.solver('ipopt')
         solOld = ocp.solve();
         solver_opt = struct('warm_start_init_point', 'yes', 'mu_init', 1e-6, 'warm_start_mult_bound_push',1e-8, ...
             'warm_start_slack_bound_push', 1e-8, 'warm_start_bound_push', 1e-6, ...
-            'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8, 'print_level', 0);
+            'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8);
         ocp.solver('ipopt', struct(), solver_opt)
 
     end
