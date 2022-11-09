@@ -1,25 +1,29 @@
+%% Runs MPC algorithm for wave harvester
 
 
-
-%  Define MPC parameters. These can and should be chosen by the user.
+% Define MPC parameters. These can and should be chosen by the user.
 % Suggested
 % values
 
 MPCtimehorizon  = 60;          % [1-70]  MCP Timehorizon. After ~70 seconds the solution does not improve.
-timehorizon     = 400;         % [1-inf]  How long
+timehorizon     = 10;          % [1-inf]  How long
 timestep        = 0.5;         % [0.05-1] MPC timestep, i.e. the discretisation of the ocp.
-%          A step larger then 1 is not recommended.
+                               %          A step larger then 1 is not recommended.
 Seed            = 2  ;         % [1-10]   Seed of the Wave distrurbance. Seeds [1-10] have been provided.
 Damagereduction = 0.4;         % [0-1]    This implementation uses Multicriterial Optimization.
-%          Therefore wen need to specify a weight for
-%          the damage contribution
+                               %          Therefore we need to specify a weight forthe damage contribution. 
+                               %          0 wouldcorrespond to a single criterial  optimization only
+                               %          maximizing the harvested energy
+                                      
 
 plotting        = true;        % If plotting the solution of the MPC is shown as it progresses.
-% but slows down the algorithm!
+                               % but slows down the algorithm!
+saving           = true;       % If saving, the results will be saved to the "Results" folder.
+             
 
-
-load('PolySurge_inputs.mat');
-load ('WaveData.mat')
+% Here, the algorithm starts. User interference is not recomended
+load(['src' filesep 'PolySurge_inputs.mat']);       % Load Model Parameters 
+load (['src' filesep 'WaveData.mat'])               % Load Wave Data
 nSteps          = round(MPCtimehorizon/timestep);   % Number of discrete timesteps
 time            = [0:timestep:(nSteps)*timestep];   % Create array with discrete time steps
 nx              = 7;                                % Size of the state
@@ -63,7 +67,8 @@ end
 h_zero = h_integ(:) == 0;
 ocp.subject_to( h_zero )
 
-% Set initial values and apply wave distrurbance
+% Set initial values, apply wave distrurbance,
+% costfunction and constrains 
 try
     Wave_function = @(t) interp1(WaveData.time,WaveData.(['Wave_Seed_' num2str(Seed)]),t);
 catch
@@ -89,14 +94,14 @@ ResultsMPC = cell(length(starttime),1);
 AppliedSignal=[];
 if (plotting)
     close all
-    f = openfig("PlotBlank.fig");
+    f = openfig(['src' filesep 'MPCPlotting.fig']);
     ax1 = f.Children(3);
     ax2 = f.Children(2);
     ax3 = f.Children(1);
 end
 
 for i = 1:length(starttime)
-    nHorizon = round(MPCtimehorizon/timestep);     % Number of Pareto Points
+    nHorizon = round(MPCtimehorizon/timestep);                          % Number of Pareto Points
     time = [starttime(i):timestep:(nHorizon)*timestep+starttime(i)];    % Create array with discrete time steps
     ocp.set_value(d,arrayfun(@(t) Wave_function(t),time));
 
@@ -134,7 +139,7 @@ for i = 1:length(starttime)
 
     end
 
-    %Save results in Array
+    %Save results in struct
     solMpc = struct;
     solMpc.x = solOld.value(x);
     solMpc.u = solOld.value(u);
@@ -144,34 +149,24 @@ for i = 1:length(starttime)
 
 
     if (plotting)
-
-
-
         axes(ax1)
         hold on
-
         plot(AppliedSignal(1,:),rad2deg(AppliedSignal(3,:)),'b',LineWidth=8)
-
         plot(solOld.value(time),rad2deg(solOld.value(x(2,:))),'r--',LineWidth=8)
         if ~(i==1)
             delete(ax1.Children(end))
             delete(ax1.Children(end))
         end
-
         axes(ax2)
         hold on
-
         plot(AppliedSignal(1,:),AppliedSignal(2,:),'b',LineWidth=8)
-
         plot(solOld.value(time),solOld.value(u),'r--',LineWidth=8)
         if ~(i==1)
             delete(ax2.Children(end))
             delete(ax2.Children(end))
         end
-
         axes(ax3)
         hold on
-
         plot(AppliedSignal(1,:),arrayfun(@(t) Wave_function(t),AppliedSignal(1,:)),'b',LineWidth=8)
         plot(solOld.value(time),arrayfun(@(t) Wave_function(t),solOld.value(time)),'r--',LineWidth=8)
         if ~(i==1)
@@ -181,7 +176,9 @@ for i = 1:length(starttime)
     end
 
 end
-
+if (saving)
+    save(['Results/MPC_Horizon_eq_' num2str(timehorizon) '_DamageReduction_eq_ ' num2str(Damagereduction) '_Seed_eq_' num2str(Seed) '.mat'  ],"ResultsMPC",'time')
+end
 
 
 function cost = cost_damage(x, u, ~, ~)
@@ -189,17 +186,18 @@ function cost = cost_damage(x, u, ~, ~)
 cost = (max(u - 484, 0).^2)*1e-6;
 end
 
+
 function cost = cost_energy(x, u, d)
 persistent Ch S R0
 
 if isempty(Ch) || isempty(S) || isempty(R0)
-    load("PolySurge_inputs.mat" ,'Ch', 'S', 'R0');
+    load(['src' filesep 'PolySurge_inputs.mat'] ,'Ch', 'S', 'R0');
 end
 cost = (Ch*x(1).^2 + x(3:5)'*S*x(3:5) - d .* x(1))*1e-6 + u/R0;
 end
 
 
-
+% runge-kutta 4  integrator
 function x_end = integrator_step_disturbed(x0, u, dt, odefun, d)
 % calculate one integration step with step size dt
 import casadi.*
@@ -223,18 +221,3 @@ x_end  = x0_rk + dt / 6 * k * [1 2 2 1]';
 
 end
 
-function [RMSE]  = SignalDifference(t1,sig1,t2,sig2)
-sig2 = @(t) interp1(t2,sig2,t);
-RMSE = 0;
-for i = 1:length(t1)
-    RMSE = RMSE + (sig1(i)-sig2(t1(i)))^2;
-
-
-
-end
-RMSE = sqrt(RMSE/length(t1));
-
-if RMSE >= 0.02
-    warning('Please reconsider the time step! might be to large')
-end
-end
