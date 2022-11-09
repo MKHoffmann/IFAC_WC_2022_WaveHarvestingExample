@@ -1,24 +1,24 @@
-%% In addition to the MPC Algorithm this script has an additional heurisitc damage controler.
-%% The Goal is to arrive at a specific damage state at a specific time.
-
+%% In addition to the MPC Algorithm this script has an additional heuristic damage controller.
+%% The goal is to arrive at a specific damage state at a specific time.
+% This script requires the installation of the CasADi toolbox available at https://web.casadi.org/
 
 %  Define MPC and damage parameters. These can and should be chosen by the
 %  user.
 
 
                               % Suggested values
-DamageTarget        = 0.35;   % [0.02-0.6]Damage accumulates liniarly. So if you want to simulate
-                              %           a larger horizon you need to scale the damage linearly.
-MPCtimehorizon      = 60;     % [1-70]    MCP Timehorizon. After ~70 seconds the solution does not improve.
-timehorizon         = 3000;   % [1-inf]   How long
-timestep            = 0.5;    % [0.05-1]  MPC timestep, i.e. the discretisation of the ocp.
-                              %           A step larger then 1 is not recommended.
-AdjustPointInterval = 50;     % [25-100]  Number of steps after which the Pareto-Point is updated. 
-                              %           this is the main hyper-parameter for the damage controler
-Seed                = 2;      % [1-10]    Seed of the Wave distrurbance. Seeds [1-10] have been provided.
+DamageTarget        = 0.35;   % [0.02-0.6]  Damage accumulates linearly. So if you want to simulate
+                              %             a larger horizon you need to scale the damage linearly.
+MPCtimehorizon      = 60;     % [1-70]      MCP Timehorizon. After ~70 seconds the solution does not improve.
+timehorizon         = 3000;   % [1-inf]     Time how long the system is simulated.
+timestep            = 0.5;    % [0.05-1]    MPC timestep, i.e. the discretisation of the ocp.
+                              %             A step larger then 1 is not recommended.
+AdjustPointInterval = 50;     % [25-100]    Number of steps after which the Pareto-Point is updated. 
+                              %             this is the main hyper-parameter for the damage controller
+Seed                = 2;      % [1-10]      Seed of the Wave distrurbance. Seeds [1-10] have been provided.
 Point               = 6;      % [1-nPoints] The point will be adjusted over the MPC horizon. 
-                              %            Still, a starting weight needs to be provided
-nPoints             = 15;     % [5-100]   Number of discrete Weights/Points to switch between
+                              %             Still, a starting weight needs to be provided
+nPoints             = 15;     % [5-100]     Number of discrete Weights/Points to switch between.
 
 
 plotting            = true;   % If plotting, the accumulation of the damage is shown as it progresses.
@@ -27,7 +27,7 @@ saving              = true;   % If saving, the results will be saved to the "Res
 
 
 
-% Here, the algorithm starts. User interference is not recomended
+% Here, the algorithm starts. User interference is not recommended.
 
 load(['src' filesep 'PolySurge_inputs.mat']);       % Load Model Parameters 
 load (['src' filesep 'WaveData.mat'])               % Load Wave Data
@@ -52,56 +52,56 @@ DamageAtIncrement = @(t) interp1([0 timehorizon],[0 DamageTarget],t,"linear");
 % with its own motion x(6)   = Energy Harvested x(7)   = Damage aculmulated
 x0 =   [0.0515     0.1392   314.4363   94.1062  190.4844         0         0 ]';
 
-
-import casadi.*                                    % import casadi and set solver
 ocp = casadi.Opti();
 ocp.solver('ipopt')
 
-% The wave differential equation
+% The differential equation describing the DEG-WEC plus the integrands of
+% the cost functions.
 wave_dgl = @(x,u,d) [Ac * x(1:5) - Bc * 1e6 * u * gamma * x(2) + Bc * d;
     cost_energy(x,u,d);
     cost_damage(x,u);
     ];
 
-x0_p = ocp.parameter(nx,1);                       % create the decision variables for the ocp.
+x0_p = ocp.parameter(nx,1);                       % create the decision variables and parameters for the ocp.
 x = [x0_p, ocp.variable(nx, nSteps+1 - (foh))];
 u = [ocp.parameter(nu, 1), ocp.variable(nu, nSteps)];
 d = ocp.parameter(1, nSteps + foh);
 h_integ = casadi.MX(nx, nSteps);
 
-
 % integrate the discretised ode. x(t+1)  = integrator(x(t),u(t),d(t))
 for iStep = 1:nSteps
-    h_integ(:, iStep) = integrator_step_disturbed(x(:,iStep), u(:, iStep + (0:foh)), timestep, wave_dgl, d(:, iStep + (0:foh))) - x(:,iStep+1);
+    h_integ(:, iStep) = integrator_step_disturbed(x(:,iStep), u(:, iStep + (0:foh)), timestep, ...
+        wave_dgl, d(:, iStep + (0:foh))) - x(:,iStep+1);
     ocp.subject_to( )
 end
 h_zero = h_integ(:) == 0;
 ocp.subject_to( h_zero )
 
-% Set initial values, apply wave distrurbance,
-% costfunction and constrains 
+% Set initial values, apply wave disturbance,
+% cost function and constrains 
 try
-    Wave_function = @(t) interp1(WaveData.time,WaveData.(['Wave_Seed_' num2str(Seed)]),t);
+    Wave_function = @(t) interp1(WaveData.time, WaveData.(['Wave_Seed_' num2str(Seed)]), t);
 catch
-    error('Please choose Seed between 1 and 10!')
+    error('Please choose Seed between 1 and 10 or provide your own wave data!')
 end
-ocp.set_value(d,arrayfun(@(t)Wave_function(t),time));
-ocp.set_value(x0_p,x0)
-ocp.set_value(u(1),0)
+ocp.set_value(d, arrayfun(@(t)Wave_function(t), time));
+ocp.set_value(x0_p, x0)
+ocp.set_value(u(1), 0)
 costfun = ([x(6,end), x(7,end)]);
-p_params = ocp.parameter(2,1);
+p_params = ocp.parameter(2, 1);
 ocp.minimize( costfun*p_params );
 ocp.set_value(p_params,weights(Point,:));
-ocp.subject_to(0<=u<=uMax);
+ocp.subject_to(0 <= u <= uMax);
 
 % the MPC starts here. The MPC solutions are tracked in the ResultsMPC
 % array. The applied signal is stored in the AppliedSignal array
-% AppliedSignal (1,:) : Global time AppliedSignal (2,:) : Applied Voltage
-% AppliedSignal (3,:) : Angle of Flap
+% AppliedSignal (1,:) : Global time
+% AppliedSignal (2,:) : Applied Voltage
+% AppliedSignal (3,:) : Angle of the Flap
 % PointHist     (:,:) : Keeps track of the current and past Pareto-Points
 % cost_hist     (1,:) : Keeps track of the harvested energy
 % cost_hist     (2,:) : Keeps track of the accumulated damage
-starttime = [0:timestep:timehorizon];
+starttime = 0:timestep:timehorizon;
 ResultsMPC = cell(length(starttime),1);
 AppliedSignal=[];
 cost_hist = [];
@@ -110,30 +110,30 @@ PointHist = [];
 
 if (plotting)
     close all
-    f1 = openfig(['src' filesep 'DamageControlerPlotting.fig'])
-    plot([0:5:timehorizon],arrayfun(@(t) DamageAtIncrement(t),[0:5:timehorizon]),LineWidth=6)
+    f1 = openfig(['src' filesep 'DamageControlerPlotting.fig']);
+    plot(0:5:timehorizon, arrayfun(@(t) DamageAtIncrement(t), 0:5:timehorizon), LineWidth=6);
 
 end
 
 for i = 1:length(starttime)
-    nHorizon = round(MPCtimehorizon/timestep);                          % Number of Pareto Points
-    time = [starttime(i):timestep:(nHorizon)*timestep+starttime(i)];    % Create array with discrete time steps
-    ocp.set_value(d,arrayfun(@(t) Wave_function(t),time));
+    nHorizon = round(MPCtimehorizon/timestep);                        % Number of Pareto Points
+    time = starttime(i):timestep:(nHorizon)*timestep+starttime(i);    % Create array with discrete time steps
+    ocp.set_value(d, arrayfun(@(t) Wave_function(t), time));
 
     % if not the first MPC step set u_0 and x_0 to the solution of previous MPC.
     if ~(i == 1)
         % reset solver for warmstarting
 
-        ocp.set_value(x(:,1),solOld.value(x(:,2)));
-        ocp.set_value(u(1),solOld.value(u(2)));
+        ocp.set_value(x(:,1), solOld.value(x(:,2)));
+        ocp.set_value(u(1), solOld.value(u(2)));
 
-        ocp.set_initial(x(:,2:end-1),solOld.value(x(:,1:end-2)));
-        ocp.set_initial(u(2:end-1),solOld.value(u(1:end-2)));
+        ocp.set_initial(x(:,2:end-1), solOld.value(x(:,1:end-2)));
+        ocp.set_initial(u(2:end-1), solOld.value(u(1:end-2)));
 
     end
     if i == 2
         % Set the solver to warmstart
-        %  (faster because we have good initial guess from previous MPC)
+        % (faster because we have good initial guess from previous MPC)
         solver_opt = struct('warm_start_init_point', 'yes', 'mu_init', 1e-6, 'warm_start_mult_bound_push',1e-8, ...
             'warm_start_slack_bound_push', 1e-8, 'warm_start_bound_push', 1e-6, ...
             'warm_start_bound_frac',1e-6, 'warm_start_slack_bound_frac',1e-8);
@@ -142,8 +142,8 @@ for i = 1:length(starttime)
     try
         solOld = ocp.solve();
     catch
-        % Faster solver sometimes cannot find solution.If that is the case
-        % disable warmstart for one iteration
+        % The chosen warmstart parameters do not always work. If that is the case
+        % disable warmstart for one iteration step.
         ocp.solver('ipopt')
         solOld = ocp.solve();
         solver_opt = struct('warm_start_init_point', 'yes', 'mu_init', 1e-6, 'warm_start_mult_bound_push',1e-8, ...
@@ -170,22 +170,22 @@ for i = 1:length(starttime)
         dmg_per_s = (cost_hist(2,end)-cost_hist(2,end-(AdjustPointInterval-1)))/(AdjustPointInterval*timestep);
         dt = timehorizon - starttime(i)+timestep;
         current_dmg = (cost_hist(2,end));
+
         if sum((AppliedSignal(2,end-(AdjustPointInterval-2):end))) < 50
             Point = Point; % Too little activity to justify point change
-        elseif current_dmg + dmg_per_s*dt > DamageTarget && Point(end) > 1 %% und threshholdspannung
+
+        elseif current_dmg + dmg_per_s*dt > DamageTarget && Point(end) > 1 
             Point = Point - 1;
             ocp.set_value(p_params,weights(Point,:));
+
         elseif current_dmg + dmg_per_s*dt < 0.8*DamageTarget && Point(end) < 15 && ((mod(i, AdjustPointInterval*2) == 0))
             Point = Point + 1;
             ocp.set_value(p_params,weights(Point,:));
-
-
         end
 
 
-
         if (plotting)
-            scatter(solOld.value(time(1)),solOld.value(x(7,1)),420,Point,'filled')
+            scatter(solOld.value(time(1)), solOld.value(x(7,1)), 420, Point, 'filled')
         end
 
     end
@@ -197,12 +197,13 @@ if (saving)
     save(['Results' filesep 'DamageControler_Horizon_eq_' num2str(timehorizon) '_seconds_Damage_eq_' num2str(DamageTarget) '_Seed_eq_' num2str(Seed) '.mat'  ],"ResultsMPC","cost_hist","PointHist","DamageTarget")
 end
 
-% Damage 
+% Damage cost function
 function cost = cost_damage(x, u, ~, ~)
 %     cost = (max(u - 484/(cos(x(2)).^2), 0).^2)*1e-6;
 cost = (max(u - 484, 0).^2)*1e-6;
 end
-% Energy
+
+% Energy cost function
 function cost = cost_energy(x, u, d)
 persistent Ch S R0
 
@@ -216,7 +217,6 @@ end
 % runge-kutta 4 integrator
 function x_end = integrator_step_disturbed(x0, u, dt, odefun, d)
 % calculate one integration step with step size dt
-import casadi.*
 
 x0_rk = x0;
 k = casadi.MX( size( x0, 1 ), 4 );
