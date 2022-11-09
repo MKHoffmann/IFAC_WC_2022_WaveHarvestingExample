@@ -153,8 +153,8 @@ for i = 1:length(starttime)
     if (plotting)
         axes(ax1);
         hold on
-        plot(AppliedSignal(1,:),rad2deg(AppliedSignal(3,:)),'b',LineWidth=8)
-        plot(solOld.value(time),rad2deg(solOld.value(x(2,:))),'r--',LineWidth=8)
+        plot(AppliedSignal(1,:),rad2deg(AppliedSignal(3,:)),'b',LineWidth=4)
+        plot(solOld.value(time),rad2deg(solOld.value(x(2,:))),'r--',LineWidth=4)
         
         if ~(i==1)
             delete(ax1.Children(end))
@@ -163,8 +163,8 @@ for i = 1:length(starttime)
 
         axes(ax2);
         hold on
-        plot(AppliedSignal(1,:),AppliedSignal(2,:),'b',LineWidth=8)
-        plot(solOld.value(time),solOld.value(u),'r--',LineWidth=8)
+        plot(AppliedSignal(1,:),AppliedSignal(2,:),'b',LineWidth=4)
+        plot(solOld.value(time),solOld.value(u),'r--',LineWidth=4)
         
         if ~(i==1)
             delete(ax2.Children(end))
@@ -173,8 +173,8 @@ for i = 1:length(starttime)
         
         axes(ax3);
         hold on
-        plot(AppliedSignal(1,:),arrayfun(@(t) Wave_function(t),AppliedSignal(1,:)),'b',LineWidth=8)
-        plot(solOld.value(time),arrayfun(@(t) Wave_function(t),solOld.value(time)),'r--',LineWidth=8)
+        plot(AppliedSignal(1,:),arrayfun(@(t) Wave_function(t),AppliedSignal(1,:)),'b',LineWidth=4)
+        plot(solOld.value(time),arrayfun(@(t) Wave_function(t),solOld.value(time)),'r--',LineWidth=4)
         
         if ~(i==1)
             delete(ax3.Children(end))
