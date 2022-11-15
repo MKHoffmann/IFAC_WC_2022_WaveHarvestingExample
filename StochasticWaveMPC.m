@@ -6,7 +6,7 @@
 % values
 
 MPCtimehorizon  = 60;          % [1-70]   MCP Timehorizon. After ~70 seconds the solution does not improve.
-simulation_time = 60;         % [1-inf]  How long
+simulation_time = 600;         % [1-inf]  How long
 timestep        = 0.5;         % [0.05-1] MPC timestep, i.e. the discretisation of the ocp.
                                %          A step larger then 1 is not recommended.
 Seed            = 4  ;         % [1-10]   Seed of the Wave distrurbance. Seeds [1-10] have been provided.
