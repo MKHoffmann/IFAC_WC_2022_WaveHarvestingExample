@@ -187,7 +187,7 @@ for i = 1:length(starttime)
 
 end
 if (saving)
-    if ~exist('Results', 'dir')
+    if ~exist([pwd filesep 'Results'],'dir')
        mkdir('Results')
     end
     save(['Results/MPC_Horizon_eq_' num2str(simulation_time) '_DamageReduction_eq_ ' num2str(Damagereduction) '_Seed_eq_' num2str(Seed) '.mat'  ],"ResultsMPC",'time')
