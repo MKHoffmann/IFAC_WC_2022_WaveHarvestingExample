@@ -190,7 +190,7 @@ if (saving)
     if ~exist([pwd filesep 'Results'],'dir')
        mkdir('Results')
     end
-    save(['Results/MPC_Horizon_eq_' num2str(simulation_time) '_DamageReduction_eq_ ' num2str(Damagereduction) '_Seed_eq_' num2str(Seed) '.mat'  ],"ResultsMPC",'time')
+    save(['Results' filesep 'MPC_Horizon_eq_' num2str(simulation_time) '_DamageReduction_eq_ ' num2str(Damagereduction) '_Seed_eq_' num2str(Seed) '.mat'  ],"ResultsMPC",'time')
 end
 
 %% Damage cost function
