@@ -193,7 +193,7 @@ for i = 1:length(starttime)
     end
 end
 if (saving)
-    if ~exist('Results', 'dir')
+    if ~exist([pwd filesep 'Results'],'dir')
        mkdir('Results')
     end
     save(['Results' filesep 'DamageControler_Horizon_eq_' num2str(simulation_time) '_seconds_Damage_eq_' num2str(DamageTarget) '_Seed_eq_' num2str(Seed) '.mat'  ],"ResultsMPC","cost_hist","PointHist","DamageTarget")
